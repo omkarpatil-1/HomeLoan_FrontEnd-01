@@ -1,0 +1,43 @@
+
+
+
+<h1 style="text-align: center;">Sanction Letter</h1>
+<mat-card>
+  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+ 
+    <form [formGroup]="sanctionletter" (ngSubmit)="onSave()">
+      <ng-template matStepLabel>Sanction Letter</ng-template>
+
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="Sanction Id" formControlName="id">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="Bank Name" formControlName="bankName">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="Account Number" formControlName="accountNumber">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="Tenure (Month)" formControlName="tenure">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="Customer Total Loan Required " formControlName="customerTotalLoanRequired">
+    </mat-form-field><br>     
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="Sanction Amount" formControlName="sanctionAmount">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="Rate Of Interest" formControlName="rateofInt">
+    </mat-form-field><br>
+   
+
+      <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    
+</form>
+
+</mat-card-content>
+</mat-card> 
+
+

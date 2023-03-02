@@ -1,0 +1,62 @@
+
+
+  body{background-color:#FFEBEE}.card{width:400px;border: none;border-radius: 14px !important}
+  .area1{background-color: #06032794;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important}
+  .image{top: -62px;position: relative}.image img{box-shadow: 5px 6px 6px 2px #e9ecef}.area2{background-color:rgba(246, 248, 125, 0.425);border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important}
+  .name{font-size:25px;font-weight:650}.information{color:#9FA8DA;font-weight:500;font-size:16px}
+
+
+  body{
+    background: rgba(132, 155, 219, 0.5);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container{
+    background: #fff;
+    margin-top: 50px;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 945px;
+  }
+  
+  img{
+    padding-top: 110px;
+    padding-left: 50px;
+    width: 85%;
+    height: 80%;
+  }
+  .text-muted{
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .form-title{
+    font-weight: bold;
+  }
+  .form-group label{
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 5px;
+    color: #828282;
+  }
+  .form-control{
+    border: none; /*1px solid #f4f4f4;*/
+    border-radius: 20px;
+    background: rgba(165, 147, 69, 0.075);/*#f4f4f4;*/
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.2);
+  }
+  .btn{
+    width: 100%;
+    font-size: 12px;
+    margin-top: 10px;
+      background-color: rgba(56, 147, 243, 0.67);
+      text-align: center;
+      border-radius: 5px;
+  }
+  .form-control:focus {
+      color: #495057;
+      border-color: #fff !important;
+      outline: 0;
+      box-shadow: 0 1px 1px 1px rgba(0, 123, 255, .25) !important
+  }
+
+ 

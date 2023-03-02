@@ -1,0 +1,53 @@
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h2 style="margin-bottom:20px;">Enquiry List</h2>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 300px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #3081d7;">
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Email Id</th>                          
+                          <th scope="col">Status</th>
+                          <th scope="col">Cibil</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of ellist"> 
+               
+                          <td>{{e.custId}}</td>  
+                          <td>{{e.firstName}}</td> 
+                          <td>{{e.age}}</td> 
+                          <td>{{e.emailId}}</td> 
+                          <td>{{e.status}}</td> 
+                                           
+                   
+                          <td *ngIf="e.cibil==0">
+                           <input type="button" (click)="getCibil(e.custId)" class="btn btn-success" value="Get cibil"> 
+                          </td>
+                          <td *ngIf="e.cibil!==0">
+                            {{e.cibil}}
+                           </td>
+            
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

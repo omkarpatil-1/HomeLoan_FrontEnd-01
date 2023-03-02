@@ -1,0 +1,87 @@
+
+
+<div class="content" role="main" >
+<div class="mat-elevation-z8" >
+<pre>
+  <button mat-raised-button (click)="onCreate()" style="margin-top: 20px;">
+    <mat-icon>add</mat-icon>Add Employee
+  </button>
+</pre>
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput placeholder="Search here" (keyup)="Filterchange($event)">
+</mat-form-field>
+
+<table mat-table matSort [dataSource]="dataSource" >
+  <ng-container matColumnDef="profile">
+    <th mat-header-cell *matHeaderCellDef> profile </th>
+    <td mat-cell *matCellDef="let element"><img [src]="'data:image/jpg;base64,'+element.profile" height="50"></td>
+  </ng-container>
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="firstname">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef> firstname </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstname}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="lastname">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef> lastname </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="password">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef> password </th>
+    <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="role">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef> role </th>
+    <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-sort-header mat-header-cell *matHeaderCellDef> email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+
+  <!-- <ng-container matColumnDef="gender">
+    <th mat-header-cell *matHeaderCellDef> gender </th>
+    <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+  </ng-container> -->
+
+  <!-- <ng-container matColumnDef="birthday">
+    <th mat-header-cell *matHeaderCellDef> birthday </th>
+    <td mat-cell *matCellDef="let element"> {{element.birthday}} </td>
+  </ng-container> -->
+
+  
+
+  <ng-container matColumnDef="Action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary">Edit</button> |
+    <button mat-raised-button color="accent">Delete</button> </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButton></mat-paginator>
+
+</div>
+</div>
+<!-- <table>
+  <tr>
+    <th>cbilScore</th>
+    <th>status</th>
+  </tr>
+  <tr *ngFor="let x of empdata">
+    <td>{{x.cbilScore}}</td>
+  </tr>
+</table> -->

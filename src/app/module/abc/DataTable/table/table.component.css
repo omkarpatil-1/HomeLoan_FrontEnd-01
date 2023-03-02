@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+  }
+  
+img{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mat-sort-header-container {
+    justify-content: center !important;
+}

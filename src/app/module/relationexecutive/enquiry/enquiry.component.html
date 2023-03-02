@@ -1,0 +1,39 @@
+<h1>New Enquiry</h1>
+<mat-card>
+  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+  <form [formGroup]="enquiryForm" ><!--(ngSubmit)="onSave()"-->
+
+    
+      <ng-template >name</ng-template>
+      <mat-form-field>
+
+        <input matInput type="text" class="form-control" placeholder="first Name"  formControlName="firstName" >
+      </mat-form-field> <br>
+      <mat-form-field>
+       <input matInput type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"placeholder="Age" formControlName="age">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"placeholder="Email Id" formControlName="emailId">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text" class="form-control" placeholder="mobile No"formControlName="mbNo">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"class="form-control" placeholder="Pancard Id" formControlName="pancardNo">
+      </mat-form-field><br>
+      <div>
+        <button type="submit" (click)="onSave()" routerLink="../review" class="btn btn-danger" mat-raised-button color="primary">Submit</button>
+      </div>
+      <!-- onclick="showSwal('success-message')" -->
+ </form>
+</mat-card-content>
+</mat-card>
+
+<div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+
+</div>
+

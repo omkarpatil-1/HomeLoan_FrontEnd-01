@@ -1,0 +1,96 @@
+<mat-toolbar>
+  <span>{{service.form.controls['$key'].value?"Modify Employee":"New Employee"}}</span>
+  <hr>
+ <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" ><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+
+<form [formGroup]="empdata" class="normal-form" (ngSubmit)="onSubmit()">
+ <!-- <mat-grid-list cols="2" rowHeight="300px">
+   <mat-grid-tile> -->
+     
+       <!-- <input type="hidden" formControlName="$key">
+       <mat-form-field>
+         <input type="text" formControlName="loginId" matInput placeholder="loginId*">
+       <mat-error>This field is mandatory.</mat-error> 
+       </mat-form-field> -->
+
+       <mat-form-field>
+         <input type="text" formControlName="firstname" matInput placeholder="firstname">
+         <!-- <mat-error>Invalid email address.</mat-error> -->
+       </mat-form-field>
+
+       <!-- <mat-form-field>
+         <input formControlName="mobile" matInput placeholder="Mobile*">
+         <mat-error *ngIf="service.controls['mobile'].errors?.required">This field is mandatory.</mat-error>
+         <mat-error *ngIf="service.controls['mobile'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+       </mat-form-field> -->
+
+       <mat-form-field>
+         <input type="text" formControlName="lastname" matInput placeholder="lastname">
+       </mat-form-field>
+
+       <mat-form-field>
+         <input type="password" formControlName="password" matInput placeholder="password">
+       </mat-form-field>
+
+       <mat-form-field>
+        <mat-select formControlName="role" matInput placeholder="role">
+          <mat-option *ngFor="let item of roleData" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+       <mat-form-field>
+         <input type="email" formControlName="email" matInput placeholder="email">
+       </mat-form-field>
+
+       <!-- <mat-form-field>         
+         <input type="text" formControlName="gender" matInput placeholder="gender">
+       </mat-form-field> -->
+
+       <mat-form-field>         
+         <input type="text" formControlName="birthday" matInput placeholder="birthday">
+       </mat-form-field>
+
+       <div style="margin-bottom: 15px;">
+         <!-- <input formControlName="profile" matInput placeholder="profile"> -->
+         <div>Profile Photo</div>
+         <input type="file" (change)="selectedProfile($event)">
+       </div>
+     
+   <!-- </mat-grid-tile>
+   <mat-grid-tile> -->
+     <div class="controles-container">
+       <div class="add-bottom-padding">
+         <mat-radio-group formControlName="gender" placeholder="gg">
+           <mat-radio-button value="male">Male</mat-radio-button>
+           <mat-radio-button value="female">Female</mat-radio-button>
+           <mat-radio-button value="other">Other</mat-radio-button>
+         </mat-radio-group>
+       </div>
+     </div>
+       <!-- <mat-form-field>
+         <mat-select formControlName="department" placeholder="Department">
+           <mat-option>None</mat-option>
+           <ng-container *ngFor="let department of departmentService.array">
+             <mat-option value="{{department.$key}}">{{department.code}}-{{department.name}}</mat-option>
+           </ng-container>
+         </mat-select>
+       </mat-form-field> -->
+        <!-- <mat-form-field>
+         <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
+         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+         <mat-datepicker #picker></mat-datepicker>
+       </mat-form-field> -->
+       <!-- <div class="add-bottom-padding">
+         <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
+       </div> -->
+
+       <div class="button-row">
+         <button mat-raised-button color="primary" type="submit">Submit</button>
+         <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+       </div>
+     
+   <!-- </mat-grid-tile>
+ </mat-grid-list> -->
+</form>
