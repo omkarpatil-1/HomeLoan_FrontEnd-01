@@ -3,7 +3,7 @@
       <div class="mask d-flex align-items-center h-100">
         <div class="container">
           <div class="text-center pt-5">      
-            <h1 style="margin-bottom:5px;">Enquiry List</h1>          
+            <h1 style="margin-bottom:5px;">Customer List</h1>          
           </div>
           <div class="row justify-content-center">
             <div class="col-12">
@@ -13,16 +13,17 @@
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #3081d7;">
                         <tr>
+                          <!--I want here Customer Table-->
                           <th scope="col">ID</th>
                           <th scope="col">Name</th>
                           <th scope="col">Age</th>
                           <th scope="col">Email Id</th>                          
                           <th scope="col">Status</th>
                           <th scope="col">Action</th>
-                          
+                               
                         </tr>
                       </thead>
-
+<!--I want here Customer Table-->
                       <tbody>
                         <tr *ngFor="let e of applist"> 
                           
@@ -31,9 +32,11 @@
                           <td>{{e.age}}</td> 
                           <td>{{e.customerEmail}}</td> 
                           <td>{{e.status}}</td> 
+
                                               
                           <td>
                             <div>
+                              <!--Customer Documents-->
                                  <button mat-raised-button color="primary" (click)="image(e.customerId)">getDocuments</button> 
                               </div>
                           </td>                     
@@ -50,6 +53,7 @@
       </div>
     </div>
   </section>
+  <!--Document Code-->
 <div *ngIf="retrievedDoc.customerId!=0">
   <h1 style="text-align: center;">Documents of Application id-{{retrievedDoc.customerId}}</h1>
   <mat-card>

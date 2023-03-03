@@ -1,6 +1,6 @@
 export class Document {
-    documentId:number
-	 customerId:number
+documentId:number
+customerId:number
 identityProof :any[];
 addressProof:any [];
 incomeProof1:any [];

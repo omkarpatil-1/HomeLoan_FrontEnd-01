@@ -1,12 +1,21 @@
 export class SanctionLetter {
-id:number;
-tenure:number;
-rateofInt:number;
-customerTotalLoanRequired:number;
-bankName:String;
-accountNumber:number;
-sanctionAmount:number;
-
+//Sanction Letter 
+ sid:number;
+ sanctionDate:String;
+ prospectNo:String;
+ applicantName:String;
+ contactDetails:String;
+product:String;
+ loanAmtSanctioned:number;
+  interestType:String;
+ rateOfInterest:number;
+ loanTenure:String;
+  monthlyEmiAmount:number;
+ modeOfPayment:String;
+ remarks:String;
+ termsandCondition:String;
+ status:String;
+ email:String;
 
 
 

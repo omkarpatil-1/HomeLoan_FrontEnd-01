@@ -29,6 +29,7 @@ import { ContactusComponent } from './home/contactus/contactus.component';
 import { ApplyprocessComponent } from './home/applyprocess/applyprocess.component';
 import { FaqComponent } from './home/faq/faq.component';
 import { FrontpageComponent } from './home/frontpage/frontpage.component';
+import { SanctionComponent } from './module/creditmanager/sanction/sanction.component';
 
 
 

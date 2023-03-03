@@ -8,9 +8,7 @@ import { Profession } from "./profession";
 import { SanctionLetter } from "./sanction-letter";
 
 export class Customer {
-  // url(url: any): any {
-  //   throw new Error('Method not implemented.');
-  // }
+  
 customerId:number;
 customerName:String;
 customerDateOfBirth:String;

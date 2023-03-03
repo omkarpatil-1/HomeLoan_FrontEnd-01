@@ -11,8 +11,8 @@ import { RelationexecutiveModule } from './module/relationexecutive/relationexec
 import { AbcModule } from './module/abc/abc.module';
 import { EmicalComponent } from './home/emical/emical.component';
 import { AccountheadModule } from './module/accounthead/accounthead.module';
-import { ViewAppComponent } from './module/accounthead/view-app/view-app.component';
-import { SanctionComponent } from './module/accounthead/sanction/sanction.component';
+
+import { SanctionComponent } from './module/creditmanager/sanction/sanction.component';
 import { AboutusComponent } from './home/aboutus/aboutus.component';
 import { ContactusComponent } from './home/contactus/contactus.component';
 import { ApplyprocessComponent } from './home/applyprocess/applyprocess.component';

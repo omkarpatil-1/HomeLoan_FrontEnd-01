@@ -16,10 +16,9 @@ export class CreditmanagerComponent implements OnInit {
 
   applist:Customer[];
 
-
+//For Getting Cutomer
   ngOnInit(): void {
-    // setTimeout(() => {this.ngOnInit()},1000*1)
-   
+       
     this.rg.getApplicants().subscribe((data:Customer[])=>{
      this.applist=data
     
@@ -28,6 +27,9 @@ console.log(this.applist)
     }
     )}
     
+
+
+    //View Document
   retrievedDoc:Document={
     documentId: 0,
     customerId: 0,

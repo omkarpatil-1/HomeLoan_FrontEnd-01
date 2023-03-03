@@ -29,14 +29,13 @@ export class RegisterService {
     sanctionletter: [],
     carinfo: [],
 
-    // url: function (url: any) {
-    //   throw new Error('Function not implemented.');
-    // },
-   
+    
   }
   url: string = "http://localhost:8081/reg"
+  //Url For Getting Customer
+  url1:string="localhost:8003/customer/getAllCustomer"
   getApplicants(): any {
-    return this.httpclient.get(this.url+"/getData");
+    return this.httpclient.get(this.url1+"/getData");
   }
 
 
@@ -74,22 +73,31 @@ id:number;
 
 sanc:SanctionLetter
 sanction:SanctionLetter={
-  id:0,
-  customerTotalLoanRequired: 0,
-  bankName: '',
-  accountNumber: 0,
-  sanctionAmount: 0,  
-  tenure: 0,
-  rateofInt: 0
+  sid: 0,
+  sanctionDate: '',
+  prospectNo: '',
+  applicantName: '',
+  contactDetails: '',
+  product: '',
+  loanAmtSanctioned: 0,
+  interestType: '',
+  rateOfInterest: 0,
+  loanTenure: '',
+  monthlyEmiAmount: 0,
+  modeOfPayment: '',
+  remarks: '',
+  termsandCondition: '',
+  status: '',
+  email: ''
 }
 
-getSanction(id: number): Observable<SanctionLetter> {
-  alert(id)
-  return this.httpclient.get<SanctionLetter>(`${this.url}/getSanction/${id}`);
+getSanction(sid: number): Observable<SanctionLetter> {
+  alert(sid)
+  return this.httpclient.get<SanctionLetter>(`${this.url}/getSanction/${sid}`);
 }
 
-updateSanction(id: number, value: any): Observable<SanctionLetter> {
-  return this.httpclient.put<SanctionLetter>(`${this.url}/savesanctionLatter/${id}`, value);
+updateSanction(sid: number, value: any): Observable<SanctionLetter> {
+  return this.httpclient.put<SanctionLetter>(`${this.url}/savesanctionLatter/${sid}`, value);
 }
 
 
