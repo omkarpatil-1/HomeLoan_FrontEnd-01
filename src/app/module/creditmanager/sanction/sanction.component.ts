@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SanctionLetter } from 'app/model/sanction-letter';
 import { RegisterService } from 'app/module/shared/register.service ';
 import { ReportService } from 'app/module/shared/report.service';
 
@@ -49,5 +50,11 @@ export class SanctionComponent implements OnInit {
     window.location.reload();    
   } 
 
+  saveSanction()
+  {
+    console.log("saveSanction :: in TS")
+    this.ser.saveSanction(this.sanctionletter.value).subscribe();
+  }
 
 }
+

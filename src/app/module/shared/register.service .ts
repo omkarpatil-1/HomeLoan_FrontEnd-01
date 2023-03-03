@@ -2,7 +2,7 @@ import { Customer } from './../../model/Customer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Enquiry } from 'app/model/enquiry';
+
 import { SanctionLetter } from 'app/model/sanction-letter';
 
 @Injectable({
@@ -33,7 +33,24 @@ export class RegisterService {
   }
   url: string = "http://localhost:8081/reg"
   //Url For Getting Customer
-  url1:string="localhost:8003/customer/getAllCustomer"
+  url1:string="localhost:8005/customer/getAllCustomer"
+  //Url For Getting Document 
+  url2:string="localhost:8005/credit-api/getAllDocument"
+  //Url For Creating Sanction Letter
+  url3:string="http://localhost:8005/credit-api/createSanction"
+  
+  
+  saveSanction(san: SanctionLetter):Observable<SanctionLetter> {
+   console.log(san+"Service")
+   console.log("saveSanction :: in service")
+    return this.httpclient.post<SanctionLetter>(this.url3 , san);
+
+  }
+ 
+
+
+
+
   getApplicants(): any {
     return this.httpclient.get(this.url1+"/getData");
   }
@@ -97,8 +114,7 @@ getSanction(sid: number): Observable<SanctionLetter> {
 }
 
 updateSanction(sid: number, value: any): Observable<SanctionLetter> {
-  return this.httpclient.put<SanctionLetter>(`${this.url}/savesanctionLatter/${sid}`, value);
+  return this.httpclient.put<SanctionLetter>(`${this.url3}/savesanctionLatter/${sid}`, value);
 }
-
 
 }
