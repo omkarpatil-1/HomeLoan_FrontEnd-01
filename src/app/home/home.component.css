@@ -321,13 +321,23 @@ input[type="checkbox"]{
 .right1 {
  
   height: 100%;
-  width: 60%;
+  width: 200%;
   margin-right: 220px;
  
 }
 .right1 li{
   list-style: none;
   padding-left: 40px;
+}
+
+.col h1{
+font-size: 40px;
+width:500px ;
+
+font-style: inherit;
+color: rgb(240, 209, 170);
+
+
 }
 
 
@@ -343,7 +353,7 @@ input[type="checkbox"]{
     position: fixed;
     top: 280px;
     left: -100%;
-    background: rgba(0, 0, 0, 0.945);
+    background: rgba(24, 23, 23, 0.945);
     height: 40%;
     width: 100%;
     text-align: center;
