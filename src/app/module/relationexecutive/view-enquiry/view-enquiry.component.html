@@ -15,21 +15,21 @@
                         <tr>
                           <th scope="col">ID</th>
                           <th scope="col">Name</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Email Id</th>                          
-                          <th scope="col">Status</th>
+                          <th scope="col">Email</th>
+                           <th scope="col">Contact</th>                         
+                          ><th scope="col">Age</th>
                           <th scope="col">Action</th>
-                          <th></th>
+                          
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let e of ellist"> 
                
-                          <td>{{e.custId}}</td>  
-                          <td>{{e.firstName}}</td> 
-                          <td>{{e.age}}</td> 
-                          <td>{{e.emailId}}</td> 
-                          <td>{{e.status}}</td> 
+                          <td >{{e.eid}}</td> 
+                          <td >{{e.name}}</td>
+                          <td >{{e.email}}</td> 
+                          <td >{{e.mobileNo}}</td> 
+                          <td >{{e.age}}</td> 
                                               
                           <td>
                               <a mat-raised-button color="primary" (click)="editEnquiry(e)">

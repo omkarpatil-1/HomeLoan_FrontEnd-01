@@ -17,14 +17,15 @@ submitted = false;
 
   ngOnInit(): void {
     this.enquiryForm=this.fb.group({  
-      custId:[this.ser.enqiry.custId,[Validators.required]],    
-      firstName:[this.ser.enqiry.firstName,[Validators.required]],
-      lastName:[this.ser.enqiry.lastName,[Validators.required]],
-      age:[this.ser.enqiry.age,[Validators.required]],
-      mbNo:[this.ser.enqiry.mbNo,[Validators.required]],
-      pancardNo:[this.ser.enqiry.pancardNo,[Validators.required]],
-      emailId:[this.ser.enqiry.emailId,[Validators.required]]
-   
+      
+      name:[this.ser.enqiry.name],
+      dob:[this.ser.enqiry.dob],
+      age:[this.ser.enqiry.age],
+      mobileNo:[this.ser.enqiry.mobileNo],
+      pancardNo:[this.ser.enqiry.pancardNo],
+      email:[this.ser.enqiry.email],
+      addharCardNo:[this.ser.enqiry.addharCardNo],
+      gender:[this.ser.enqiry.gender]
     })    
   }
 

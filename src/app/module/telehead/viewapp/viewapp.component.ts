@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmiCustomer } from 'app/model/EmiCustomer';
+import { EMIDetails } from 'app/model/EMIDetails';
 import { ReportService } from 'app/module/shared/report.service';
 
 @Component({
@@ -10,10 +10,10 @@ import { ReportService } from 'app/module/shared/report.service';
 export class ViewappComponent implements OnInit {
 
   constructor(public repo:ReportService) { }
-  applist:EmiCustomer[]
+  applist:EMIDetails[]
 
   ngOnInit(): void {
-    this.repo.getEmiCust().subscribe((data:EmiCustomer[])=>
+    this.repo.getEmiCust().subscribe((data:EMIDetails[])=>
     this.applist=data        
     )}
     

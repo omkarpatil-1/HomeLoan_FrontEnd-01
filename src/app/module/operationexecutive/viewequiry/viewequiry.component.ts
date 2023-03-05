@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Enquiry } from 'app/model/enquiry';
+import { Enquiry_Details } from 'app/model/Enquiry_Details';
 import { CommonService } from 'app/module/shared/common.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class ViewequiryComponent implements OnInit {
 
   constructor(public cs:CommonService, public r:Router,public route:ActivatedRoute) { }
 
-  ellist:Enquiry[]
+  ellist:Enquiry_Details[]
 
   ngOnInit(): void {
-    this.cs.getEnquiryList().subscribe((data:Enquiry[])=>
+    this.cs.getEnquiryList().subscribe((data:Enquiry_Details[])=>
     this.ellist=data        
     )}
 

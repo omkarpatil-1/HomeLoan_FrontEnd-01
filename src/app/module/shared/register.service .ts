@@ -12,23 +12,26 @@ export class RegisterService {
   constructor(private httpclient: HttpClient) { }
 
   c: Customer = {
-    customerId: 0,
-    customerName: "",
-    customerDateOfBirth: "",
-    customerAge: 0,
-    customerGender: "",
-    customerEmail: "",
-    sanctionAmount: 0,
-    address: [],
-    profession: [],
-    status: undefined,
-    cibilscore: 0,
-    accountdetails: [],
-    gurantordetails: [],
-    ledger: [],
-    sanctionletter: [],
-    carinfo: [],
-
+eid:0,
+name:'',
+dob:'',
+age:0,
+gender:'',
+email:'',
+mobileNo:0,
+cAdditionalMobileNo:0,
+cAmountPaidforHome:0,
+cTotalLoanRequired:0,
+cAddress:[],
+cProfession:[],
+cAccountDetails:[],
+cGuarantorDetails:[],
+cEducationalInfo:[],
+ccibil:[],
+cPropertyInfo:[],
+cLoanDetails:[],
+cPreviousLoan:[],
+cAllPersonalDocs:[]
     
   }
   url: string = "http://localhost:8081/reg"
