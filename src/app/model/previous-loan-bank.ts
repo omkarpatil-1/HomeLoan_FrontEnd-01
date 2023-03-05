@@ -1,7 +1,6 @@
 import { BankAddress } from './bank-address';
 
-export class AccountDetails {
-
+export class PreviousLoanBank {
 branchid:number;
 branchName:string;
 branchCode:number;
@@ -11,6 +10,5 @@ contactNo:number;
 branchAddress:BankAddress[];
 email:string;
 status:string
-
 
 }

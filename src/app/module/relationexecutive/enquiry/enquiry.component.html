@@ -7,22 +7,28 @@
       <ng-template >name</ng-template>
       <mat-form-field>
 
-        <input matInput type="text" class="form-control" placeholder="first Name"  formControlName="firstName" >
+        <input matInput type="text" class="form-control" placeholder="Enter Name"  formControlName="name" >
       </mat-form-field> <br>
       <mat-form-field>
-       <input matInput type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+       <input matInput type="text" class="form-control" placeholder="Enter Date of Birth" formControlName="dob">
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput type="text"  class="form-control"placeholder="Age" formControlName="age">
+        <input matInput type="text"  class="form-control"placeholder="Enter Age" formControlName="age">
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput type="text"  class="form-control"placeholder="Email Id" formControlName="emailId">
+        <input matInput type="text"  class="form-control"placeholder="Enter Gender" formControlName="gender">
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput type="text" class="form-control" placeholder="mobile No"formControlName="mbNo">
+        <input matInput type="text"  class="form-control"placeholder="Enter Email Id" formControlName="email">
       </mat-form-field><br>
       <mat-form-field>
-        <input matInput type="text"class="form-control" placeholder="Pancard Id" formControlName="pancardNo">
+        <input matInput type="text" class="form-control" placeholder="Enter Contact Info"formControlName="mobileNo">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"class="form-control" placeholder="PANCARD details" formControlName="pancardNo">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"class="form-control" placeholder="ADHARCARD DETAILS" formControlName="addharCardNo">
       </mat-form-field><br>
       <div>
         <button type="submit" (click)="onSave()" routerLink="../review" class="btn btn-danger" mat-raised-button color="primary">Submit</button>

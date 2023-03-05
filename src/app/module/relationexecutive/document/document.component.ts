@@ -14,7 +14,7 @@ export class DocumentComponent implements OnInit {
 
   ngOnInit(): void {
     this.doc=this.fb.group({
-      customerId:[this.rs.c.customerId,[Validators.required]],
+      eid:[this.rs.c.eid,[Validators.required]],
     })
   }
 
@@ -74,7 +74,7 @@ Submit(){
 
 this.rs.upload(em).subscribe();
 
-this.rs.c.customerId=0
+this.rs.c.eid=0
 this.ngOnInit();
 }
 }

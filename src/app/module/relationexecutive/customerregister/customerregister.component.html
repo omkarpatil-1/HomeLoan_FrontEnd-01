@@ -1,196 +1,221 @@
-
-<h1 style="text-align: center;">Registration Form</h1>
-  <mat-card>
-    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-  <mat-vertical-stepper [linear]="false" #stepper animationDuration="2000">
-    <form [formGroup]="CregForm" (ngSubmit)="saveInfo()">
-    <mat-step label="Applicant Info">
-      
-        <ng-template matStepLabel>Applicant Info</ng-template>
- 
-        <mat-form-field>
-         <input matInput type="text" class="form-control" placeholder="Applicant Name" formControlName="customerName">
+<h1 style="text-align: center;">Registration Form</h1> 
+  <mat-card> 
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center"> 
+  <mat-vertical-stepper [linear]="false" #stepper animationDuration="2000"> 
+    <form [formGroup]="CregForm" (ngSubmit)="saveInfo()"> 
+    <mat-step label="Applicant Info"> 
+       
+        <ng-template matStepLabel>Applicant Info</ng-template> 
+  
+        <mat-form-field> 
+         <input matInput type="text" class="form-control" placeholder="Applicant Name" formControlName="name"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text"  class="form-control"placeholder="Applicant DOB" formControlName="dob"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text"  class="form-control"placeholder="Applicant age" formControlName="age"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control" placeholder="Applicant email"formControlName="email"> 
         </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text"  class="form-control"placeholder="Applicant DOB" formControlName="customerDateOfBirth">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text"  class="form-control"placeholder="Applicant age" formControlName="customerAge">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text" class="form-control" placeholder="Applicant email"formControlName="customerEmail">
-        </mat-form-field><br>
+        <mat-form-field> 
+          <input matInput type="text" class="form-control" placeholder="Personal Mobile Number"formControlName="mobileNo"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control" placeholder="Additional Mobile No"formControlName="cAdditionalMobileNo"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control" placeholder="Amount Paid for Home"formControlName="cAmountPaidforHome"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control" placeholder="Total Loan Required"formControlName="cTotalLoanRequired"> 
+        </mat-form-field><br> 
+       
         
-        <div class="example-button-row">
-          <button  mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      
-    </mat-step>
+         
+         
 
-    
-    <mat-step label="Customer Address">
-      <div formGroupName="address">
-        <ng-template matStepLabel>Customer Address</ng-template>
+         
+        <div class="example-button-row"> 
+          <button  mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+       
+    </mat-step> 
+ 
+     
+    <mat-step label="Customer Address" > 
+      <div formGroupName="CregForm"> 
+        <ng-template matStepLabel>Customer Address</ng-template> 
+      
+        <mat-step [stepControl]="CregForm.cAddress.controls.permanant">
+          <form [formGroup]="CregForm">
+        <div> 
+          <ng-template matStepLabel>Customer Address</ng-template> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Areaname" formControlName="areaname"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="District" formControlName="district"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="State" formControlName="state"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Pincode" formControlName="pincode"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Housen Number" formControlName="housenno"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Street Name" formControlName="streetname"> 
+        </mat-form-field><br>
+        </div>
+        </form>
+          
+        </mat-step>
+        
+
+ 
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step> 
+ 
+        <!-- <mat-step label="Profession"> 
+      <div formGroupName="profession"> 
+        <ng-template matStepLabel>Profession</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="professionType"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="professionSalary"> 
+      </mat-form-field><br> 
   
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Area name" formControlName="areaname">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Cityname" formControlName="cityname">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder=" District" formControlName="district">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text" class="form-control" placeholder=" State" formControlName="state">
-      </mat-form-field><br>
-    <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder=" pincode"formControlName="pincode">
-      </mat-form-field><br>
-
-        <div>
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      </div>
-    </mat-step>
-
-        <mat-step label="Profession">
-      <div formGroupName="profession">
-        <ng-template matStepLabel>Profession</ng-template>
-
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="professionType">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="professionSalary">
-      </mat-form-field><br>
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step> 
+    <mat-step label="Loan Details"> 
+      <div formGroupName="sanctionletter"> 
+        <ng-template matStepLabel>Loan Details</ng-template> 
  
-        <div>
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      </div>
-    </mat-step>
-    <mat-step label="Loan Details">
-      <div formGroupName="sanctionletter">
-        <ng-template matStepLabel>Loan Details</ng-template>
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Sanction Id" formControlName="id"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Bank Name" formControlName="bankName"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Account Number" formControlName="accountNumber"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text" class="form-control"  placeholder="Tenure (Month)" formControlName="tenure"> 
+        </mat-form-field><br> 
+        <mat-form-field> 
+          <input matInput type="text"class="form-control" placeholder="Applicant Loan Required" formControlName="customerTotalLoanRequired"> 
+        </mat-form-field><br> 
 
-        <mat-form-field>
-          <input matInput type="text" class="form-control"  placeholder="Sanction Id" formControlName="id">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text" class="form-control"  placeholder="Bank Name" formControlName="bankName">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text" class="form-control"  placeholder="Account Number" formControlName="accountNumber">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text" class="form-control"  placeholder="Tenure (Month)" formControlName="tenure">
-        </mat-form-field><br>
-        <mat-form-field>
-          <input matInput type="text"class="form-control" placeholder="Applicant Loan Required" formControlName="customerTotalLoanRequired">
-        </mat-form-field><br>
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step>  -->  
+ 
+<!--  
+    <mat-step label="Gurantor Details"> 
+      <div formGroupName="gurantordetails"> 
+        <ng-template matStepLabel>Gurantor Details</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder=" Guarantor Name" formControlName="guarantorName"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Guarantor Mobile Number" formControlName="guarantorMobileNumber"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder=" Guarantor Permanent Address" formControlName="guarantorPermanentAddress"> 
+      </mat-form-field><br> 
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step>  -->
+<!--  []
+    <mat-step label="Ledger"> 
+      <div formGroupName="ledger"> 
+        <ng-template matStepLabel>Ledger</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Ledger Created Date" formControlName="ledgerCreatedDate"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Total Loan Amount" formControlName="totalLoanAmount"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Payable Amount with Interest" formControlName="payableAmountwithInterest"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Tenure" formControlName="tenure"> 
+      </mat-form-field><br> 
+    <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Monthly EMI"formControlName="monthlyEmi"> 
+      </mat-form-field><br> 
+    <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Loan End Date "formControlName="loanEndDate"> 
+      </mat-form-field><br> 
+ 
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step> --> 
  
  
-        <div>
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      </div>
-    </mat-step>
-
-
-    <mat-step label="Gurantor Details">
-      <div formGroupName="gurantordetails">
-        <ng-template matStepLabel>Gurantor Details</ng-template>
-
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder=" Guarantor Name" formControlName="guarantorName">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Guarantor Mobile Number" formControlName="guarantorMobileNumber">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder=" Guarantor Permanent Address" formControlName="guarantorPermanentAddress">
-      </mat-form-field><br>
-        <div>
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      </div>
-    </mat-step>
-<!-- 
-    <mat-step label="Ledger">
-      <div formGroupName="ledger">
-        <ng-template matStepLabel>Ledger</ng-template>
-
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Ledger Created Date" formControlName="ledgerCreatedDate">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Total Loan Amount" formControlName="totalLoanAmount">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Payable Amount with Interest" formControlName="payableAmountwithInterest">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text" class="form-control" placeholder="Tenure" formControlName="tenure">
-      </mat-form-field><br>
-    <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Monthly EMI"formControlName="monthlyEmi">
-      </mat-form-field><br>
-    <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Loan End Date "formControlName="loanEndDate">
-      </mat-form-field><br>
-
-        <div>
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button color="primary" matStepperNext>Next</button>
-        </div>
-      </div>
-    </mat-step> -->
-
-
-
-    <mat-step label="Car Info">
-      <div formGroupName="carinfo">
-        <ng-template matStepLabel>Car Info </ng-template>
-        <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Car Model No" formControlName="carModelNo">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Car Name" formControlName="carName">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Brand Name" formControlName="brandName">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text"  class="form-control"  placeholder="Car Price" formControlName="carPrice">
-      </mat-form-field><br>
-      <mat-form-field>
-        <input matInput type="text" class="form-control"  placeholder="Colour" formControlName="colour">
-      </mat-form-field><br>
-      
-        <div>      
-          <ng-template matStepLabel>Done</ng-template>
-          You are now done.
-          <div>
-            <button mat-raised-button  matStepperPrevious>Back</button>
-            <button mat-raised-button color="success"  type="submit"  (click)="saveInfo()" >Submit</button>
-            <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
-          </div>
-        </div>
-      </div>
-
-    </mat-step>
-  </form>
-  </mat-vertical-stepper>
-</mat-card-content>
+ 
+    <!-- <mat-step label="Car Info"> 
+      <div formGroupName="carinfo"> 
+        <ng-template matStepLabel>Car Info </ng-template> 
+        <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Car Model No" formControlName="carModelNo"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Car Name" formControlName="carName"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Brand Name" formControlName="brandName"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Car Price" formControlName="carPrice"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Colour" formControlName="colour"> 
+      </mat-form-field><br> 
+       
+        <div>       
+          <ng-template matStepLabel>Done</ng-template> 
+          You are now done. 
+          <div> 
+            <button mat-raised-button  matStepperPrevious>Back</button> 
+            <button mat-raised-button color="success"  type="submit"  (click)="saveInfo()" >Submit</button> 
+            <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button> 
+          </div> 
+        </div> 
+      </div> 
+ 
+    </mat-step>  -->
+  </form> 
+  </mat-vertical-stepper> 
+</mat-card-content> 
 </mat-card>
-
-  
-
-
-
-

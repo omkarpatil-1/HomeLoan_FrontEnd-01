@@ -26,91 +26,168 @@ doc:FormGroup;
 
 
     this.CregForm=this.fb.group({
-      customerId:['',[Validators.required]],
-customerName:['',[Validators.required]],
-customerDateOfBirth:['',[Validators.required]],
-customerAge:['',[Validators.required]],
-customerEmail:['',[Validators.required]],
-customerTotalLoanRequired:[],
+      eid:[0],
+name:[''],
+dob:[''],
+age:[0],
+gender:[''],
+email:[''],
+mobileNo:[0],
+cAdditionalMobileNo:[0],
+cAmountPaidforHome:[0],
+cTotalLoanRequired:[0],
 
 
-address:this.fb.group({
-  permanentAddressId:[],
-areaname:[],
-cityname:[],	 
-district:[],
-state:[],
-pincode:[],
-
-}),
-
-profession:this.fb.group({
-  professionId:[],
-  professionType:[],
-  professionSalary:[],
-
-}),
-
-accountdetails:this.fb.group({
-  accountId:[],
-accountHolderName:[],
-accountNumber:[],
-}),
-
-gurantordetails:this.fb.group({
-  guarantorId:[],
-guarantorName:[],
-guarantorMobileNumber:[],
-guarantorPermanentAddress:[],
-}),
-
-ledger:this.fb.group({
-  ledgerId:[],
-ledgerCreatedDate:[],
-totalLoanAmount:[],
-payableAmountwithInterest:[],
-tenure:[],
-monthlyEmi:[],
-amountPaidtillDate:[],
-remainingAmount:[],
-nextEmiStartDate:[],
-nextEmiEndDate:[],
-defaulterCount:[],
-previousEmiStatus:[],
-currentMonthEmiStatus:[],
-loanEndDate:[],
-loanStatus:[],
-}),
-
-sanctionletter:this.fb.group({
+cAddress:this.fb.group({
+  addressid:[0],
+  permanant:this.fb.group({
+    aid:[0],
+    cityname:[''],
+    areaname:[''],
+    district:[''],
+    state:[''],
+    pincode:[0],
+    houseno:[0],
+    streetname:['']
+      })
+//   local:this.fb.group({
+//     aid:[],
+//     cityname:[],
+//     areaname:[],
+//     district:[],
+//     state:[],
+//     pincode:[],
+//     houseno:[],
+//     streetname:[]
+// })
   
-  id:[],
- rateOfInt:[],
- tenure:[],
- customerTotalLoanRequired:[],
- bankName:[],
- accountNumber:[],
- sanctionAmount:[],
-
-
-}),
-
-carinfo:this.fb.group({
-  carModelNo:[],
-carName:[],
-brandName:[],
-carPrice:[],
-colour:[],
 })
 
+// cProfession:this.fb.group({
+//   pid:[],
+//   ptype:[],
+//   psalary:[],
+//   palaryType:[],
+//   pworkingperiod:[],
+//   pDesignation:[]
+// }),
 
+// cAccountDetails:this.fb.group({
+//   branchid:[],
+//   branchName:[],
+//   branchCode:[],
+//   ifsc:[],
+//   micrCode:[],
+//   contactNo:[],
+//   branchAddress:[],
+//   email:[],
+//   status:[]
+// }),
+
+// cGuarantorDetails:this.fb.group({
+//   gid:[],
+//   gName:[],
+//   gDateofBirth:[],
+//   gRelationshipwithCustomer:[],
+//   gMobNo:[],
+//   gAdharCardNo:[],
+//   gMortgageDetails:[],
+//   gPermanentAddress:[],
+//   gloaclAddress:[]
+// }),
+
+// cEducationalInfo:this.fb.group({
+//   eduid:[],
+//     utype:[]
+// }),
+
+// cLoanDetails:this.fb.group({
+//   loanId:[],
+//   loanNo:[],
+//   emidetails:this.fb.group({
+//     emiID:[],
+// 	nextEmiDueDate:[],
+// 	emiAmountMonthly:[],
+// 	previousEmiStatus:[] 
+//  }),
+
+//   loanAmount:[],
+//   rateOfInterest:[],
+//   tenure:[],
+//   totalAmounttobepaid:[],
+//   processingFees:[],
+//   totalInterest:[],
+//   sanctionaDate:[],
+//   remark:[],
+//   status:[]
+// }),
+
+// cPreviousLoan:this.fb.group({
+//   ploanId:[],
+//   ploanAmount:[],
+//   pTenure:[],
+//   paidAmount:[],
+//   remainingAmount:[],
+//   deafulterCount:[],
+//   pbankDetails:this.fb.group({
+//     branchid:[],
+//     branchName:[],
+//     branchCode:[],
+//     ifsc:[],
+//     micrCode:[],
+//     contactNo:[],
+//     branchAddress:this.fb.group({
+//       aid:[],
+//     cityname:[],
+//     areaname:[],
+//     district:[],
+//     state:[],
+//     pincode:[],
+//     streetname:[]
+//     }),
+//     email:[],
+//     status:[]
+//    }),
+//   status:[],
+//   remark:[]
+
+// }),
+
+// ccibil:this.fb.group({
+//   cibilId:[],
+//   cibilScore:[],
+//   status:[],
+//   remarks:[],
+//   eid:[]
+
+// }),
+
+// cPropertyInfo:this.fb.group({
+//   propertyid:[],
+//      propertytype:[],
+//     propertyArea:[],
+//     constructionArea:[],
+//     propertyprice:[],
+//     constructionprice:[],
+//     propertyAddress:this.fb.group({
+//       aid:[],
+//       cityname:[],
+//       areaname:[],
+//       district:[],
+//       state:[],
+//       pincode:[], 
+//       streetname:[]
+
+//     })
+
+// })
 })
 
-
-    
 
     
   }
+    
+
 
   saveCustomerData()
     
@@ -128,7 +205,7 @@ colour:[],
       console.log(this.CregForm.value)
       console.log(this.CregForm.controls[''])
       this.rs.saveInfo(this.CregForm.value).subscribe((no:number)=>
-        this.rs.c.customerId=no
+        this.rs.c.eid=no
       );
       setTimeout(() => {this.routing()},2000*1)
       
