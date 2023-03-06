@@ -5,6 +5,7 @@ export class BankAddress {
     district:string;
     state:string;
     pincode:number;
-    streetname:string
+    streetname:string;
+
 
 }
