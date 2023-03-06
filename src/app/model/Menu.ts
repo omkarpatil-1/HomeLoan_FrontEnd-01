@@ -1,3 +1,5 @@
+import { title } from 'process';
+
 export class Menu {
     public static menu: Array<any> = [
       {
@@ -20,6 +22,7 @@ export class Menu {
     relation:[
         {path: "reenquiry", title: "ENQUIRY", icon: "pe-7s-graph", class: "" },
         {path: "review", title: "VIEW ENQUIRY", icon: "pe-7s-graph", class: "" },
+        {path:"sendmail", title:"Send MAIL", icon:"pe-7s-graph",class:""},
         {path: "recustomer", title: "REGISTER CUSTOMER", icon: "pe-7s-graph", class: "" },
         {path: "redocument", title: "UPLOAD DOCUMENT", icon: "pe-7s-graph", class: "" }
 

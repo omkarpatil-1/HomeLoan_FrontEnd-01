@@ -2,8 +2,12 @@ import { Customer } from './../../model/Customer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { Enquiry } from 'app/model/enquiry';
 import { Cibil } from 'app/model/cibil';
+=======
+import { Enquiry_Details } from 'app/model/Enquiry_Details';
+>>>>>>> 8ddd0967ad87421d0621f98fb6cf7efecabc1488
 
 @Injectable({
   providedIn: 'root'
@@ -19,31 +23,25 @@ export class CommonService {
 
   constructor(private http: HttpClient) { }
 
-  enqiry:Enquiry={
-    custId: 0,
-    firstName: '',
-    lastName: '',
-    emailId: '',
-    mbNo: 0,
-    pancardNo: '',
+  enqiry:Enquiry_Details={
+    eid:0,
+    name: '',
+    dob: '',
+    email: '',
+    mobileNo: 0,
+    pancardNo: 0,
     age: 0,
-    status: '',
-    cibil: 0
+    gender: '',
+    addharCardNo: ''
   }
 
   getEnquiry(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getEnquiry/${id}`);
+    return this.http.get('http://localhost:8003/Enquiries/getEnquiry/'+id);
   }
 
-  createEnquiry(enqiry: Enquiry): Observable<Object> {
-    if(enqiry.custId==0){
-      enqiry.status="enquiry"
-    }
-    else{
-      enqiry.status="registred"
-    }
-    
-    return this.http.post(`${this.baseUrl}/postEnquiry`, enqiry);
+  createEnquiry(enqiry: Enquiry_Details): Observable<Object> {
+    console.log(enqiry)
+   return this.http.post('http://localhost:8003/Enquiries/addEnquiry', enqiry);
   }
 
   updateEnquiry(id: number, value: any): Observable<Object> {
@@ -55,9 +53,10 @@ export class CommonService {
   }
 
   getEnquiryList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/getEnquiryList`);
+    return this.http.get('http://localhost:8003/Enquiries/getAllEnquiry');
   }
 
+<<<<<<< HEAD
   // getCibil():Observable<any> {
   //   return this.http.get(`${this.url12}`);
   // }
@@ -87,3 +86,13 @@ export class CommonService {
       return this.http.get<Cibil[]>(this.url12);
      }
  }
+=======
+  getCibil(id:number):Observable<any> {
+    return this.http.get(`${this.baseUrl}/getCibil/${id}`);
+  }
+
+  send(){
+     this.http.get('http://localhost:8003/customer/checkCibilStauts');
+  }
+}
+>>>>>>> 8ddd0967ad87421d0621f98fb6cf7efecabc1488

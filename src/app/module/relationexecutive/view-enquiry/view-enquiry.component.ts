@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'app/model/Customer';
 import { Email } from 'app/model/email';
-import { Enquiry } from 'app/model/enquiry';
+import { Enquiry_Details } from 'app/model/Enquiry_Details';
 import { CommonService } from 'app/module/shared/common.service';
 import { ReportService } from 'app/module/shared/report.service';
 
@@ -15,36 +15,37 @@ export class ViewEnquiryComponent implements OnInit {
 
   constructor(public cs:CommonService, public r:Router,public route:ActivatedRoute,public repo:ReportService) { }
 
-  ellist:Enquiry[]
+  ellist:Enquiry_Details[]
 
   ngOnInit(): void {
    
-    this.cs.getEnquiryList().subscribe((data:Enquiry[])=>
-    this.ellist=data        
+    this.cs.getEnquiryList().subscribe((data:Enquiry_Details[])=>
+    this.ellist=data    
+       
     )}
   
   deleteEnquiry(id:number){
     this.cs.deleteEnquiry(id).subscribe()
     window.location.reload();
   }
-  update(eq:Enquiry){
+  update(eq:Enquiry_Details){
     this.cs.createEnquiry(eq).subscribe();
    
   }
 
-  editEnquiry(fl:Enquiry){
+  editEnquiry(fl:Enquiry_Details){
     this.cs.enqiry=Object.assign({},fl) 
     
   }
 
 
 
-  rejectmail(e:Enquiry){
+  rejectmail(e:Enquiry_Details){
 const email=new Email()
-email.appId=e.custId
-email.name=e.firstName
-email.to=e.emailId
-email.status=e.status
+
+email.name=e.name
+email.to=e.email
+email.status=e.gender
 
     this.repo.email(email).subscribe();
   }

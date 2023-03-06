@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from 'app/model/Customer';
-import { Document } from 'app/model/document';
 import { RegisterService } from 'app/module/shared/register.service ';
 import { ReportService } from 'app/module/shared/report.service';
 import { data } from 'jquery';
-
+import {AllPersonalDocs} from 'app/model/AllPersonalDocs'
 @Component({
   selector: 'app-creditmanager',
   templateUrl: './creditmanager.component.html',
@@ -30,18 +29,20 @@ console.log(this.applist)
 
 
     //View Document
-  retrievedDoc:Document={
-    documentId: 0,
-    customerId: 0,
-    identityProof: [],
-    addressProof: [],
-    incomeProof1: [],
-    incomeProof2: [],
-    incomeProof3: []
+  retrievedDoc:AllPersonalDocs={
+    documentId:0,
+ addharCard :[],
+  addressproof:[],
+  pancard:[],
+photo: [],
+signature:[],
+bankcheque:[],
+itr:[],
+salaryslips:[]
   }
   image(id:number)
   {
-    this.rg.getDoc(id).subscribe((d:Document)=>{
+    this.rg.getDoc(id).subscribe((d:AllPersonalDocs)=>{
   
       this.retrievedDoc = d;
   

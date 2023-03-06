@@ -20,6 +20,7 @@ import { FaqComponent } from './home/faq/faq.component';
 import { BankmanagerModule } from './module/bankmanager/bankmanager.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { FrontpageComponent } from './home/frontpage/frontpage.component';
+import { EnquiryComponent } from './module/relationexecutive/enquiry/enquiry.component';
 
 
 
@@ -48,6 +49,9 @@ export const AppRoutes: Routes = [
       },
       {
         path:"front",component:FrontpageComponent
+      },
+      {
+        path:"enquiry",component:EnquiryComponent
       }
 
     ]
