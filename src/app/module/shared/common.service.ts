@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Enquiry } from 'app/model/enquiry';
+import { Cibil } from 'app/model/cibil';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,11 @@ import { Enquiry } from 'app/model/enquiry';
 export class CommonService {
 
   private baseUrl = 'http://localhost:8081/enquiry';
+
+
+  url11 :string = "http://localhost:8004/Ope-Api/setCibilStatus";
+
+  url12 :string = "http://localhost:8004/Ope-Api/getAllCibilStatus"; 
 
   constructor(private http: HttpClient) { }
 
@@ -52,9 +58,32 @@ export class CommonService {
     return this.http.get(`${this.baseUrl}/getEnquiryList`);
   }
 
-  getCibil(id:number):Observable<any> {
-    
+  // getCibil():Observable<any> {
+  //   return this.http.get(`${this.url12}`);
+  // }
+   
 
-    return this.http.get(`${this.baseUrl}/getCibil/${id}`);
+
+  cibil: Cibil={
+    
+    cibilId : 0,
+	  cibilScore : 0,
+	  status : '',
+    remarks : '',
+	  eID : 0,
   }
-}
+     
+ 
+
+  saveCibil() :Observable<any>{
+   return this.http.get(this.url11);
+     window.location.reload();
+     }
+
+
+     getAllCibil() : Observable<Cibil[]>{
+        console.log("Cibil in common Service")
+        
+      return this.http.get<Cibil[]>(this.url12);
+     }
+ }
