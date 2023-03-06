@@ -45,57 +45,91 @@
  
      
     <mat-step label="Customer Address" > 
-      <div formGroupName="CregForm"> 
+      <div formGroupName="cAddress"> 
         <ng-template matStepLabel>Customer Address</ng-template> 
-      
-        <mat-step [stepControl]="CregForm.cAddress.controls.permanant">
-          <form [formGroup]="CregForm">
-        <div> 
-          <ng-template matStepLabel>Customer Address</ng-template> 
+        <div formGroupName="permanant"> 
+          <h1 style="background-color: rgb(21, 177, 216);">Permanant Address Details</h1>
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
+          <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="cityname"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="Areaname" formControlName="areaname"> 
+          <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="areaname"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="District" formControlName="district"> 
+          <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="district"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="State" formControlName="state"> 
+          <input matInput type="text" class="form-control" placeholder="Enter State"formControlName="state"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="Pincode" formControlName="pincode"> 
+          <input matInput type="text" class="form-control" placeholder="Enter Pincode"formControlName="pincode"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="Housen Number" formControlName="housenno"> 
+          <input matInput type="text" class="form-control" placeholder="Enter House Number"formControlName="houseno"> 
         </mat-form-field><br> 
         <mat-form-field> 
-          <input matInput type="text" class="form-control"  placeholder="Street Name" formControlName="streetname"> 
-        </mat-form-field><br>
-        </div>
-        </form>
-          
-        </mat-step>
-        
+          <input matInput type="text" class="form-control" placeholder="Enter Street Name"formControlName="streetname"> 
+        </mat-form-field><br> 
+       </div>
+
+       <div formGroupName="local"> 
+        <h1 style="background-color: rgb(21, 177, 216);">Local Address Details</h1>
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="cityname"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="areaname"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="district"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter State"formControlName="state"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Pincode"formControlName="pincode"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter House Number"formControlName="houseno"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Street Name"formControlName="streetname"> 
+      </mat-form-field><br> 
+     </div>
+       
 
  
-        <div> 
+         <div> 
           <button mat-raised-button matStepperPrevious>Back</button> 
           <button mat-raised-button color="primary" matStepperNext>Next</button> 
         </div> 
       </div> 
-    </mat-step> 
- 
-        <!-- <mat-step label="Profession"> 
-      <div formGroupName="profession"> 
+    </mat-step>  
+
+    
+
+        
+          
+     
+
+         <mat-step label="Profession"> 
+      <div formGroupName="cProfession"> 
         <ng-template matStepLabel>Profession</ng-template> 
  
       <mat-form-field> 
-        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="professionType"> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="ptype"> 
       </mat-form-field><br> 
       <mat-form-field> 
-        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="professionSalary"> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="psalary"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="palaryType"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="pworkingperiod"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="pDesignation"> 
       </mat-form-field><br> 
   
         <div> 
@@ -104,7 +138,268 @@
         </div> 
       </div> 
     </mat-step> 
-    <mat-step label="Loan Details"> 
+
+
+
+    <mat-step label="Account Details"> 
+      <div formGroupName="cAccountDetails"> 
+        <ng-template matStepLabel>Account Details</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="branchName"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="branchCode"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="ifsc"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="micrCode"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="contactNo"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="email"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="status"> 
+      </mat-form-field><br> 
+
+       <div formGroupName="branchAddress"> 
+        <h1 style="background-color: rgb(21, 177, 216);">Bank Branch Address Details</h1>
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="cityname"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="areaname"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="district"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter State"formControlName="state"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Pincode"formControlName="pincode"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Street Name"formControlName="streetname"> 
+      </mat-form-field><br> 
+     </div>
+       
+
+ 
+         <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step>  
+
+
+    <mat-step label="GuarantorDetails"> 
+      <div formGroupName="cGuarantorDetails"> 
+        <ng-template matStepLabel>Guarantor Details</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="gName"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gDateofBirth"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gRelationshipwithCustomer"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gMobNo"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gAdharCardNo"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gMortgageDetails"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gPermanentAddress"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="gloaclAddress"> 
+      </mat-form-field><br> 
+  
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step> 
+
+    <mat-step label="EducationalInfo"> 
+      <div formGroupName="cEducationalInfo"> 
+        <ng-template matStepLabel>Educational Information</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="utype"> 
+      </mat-form-field><br> 
+     
+        <div> 
+          <button mat-raised-button matStepperPrevious>Back</button> 
+          <button mat-raised-button color="primary" matStepperNext>Next</button> 
+        </div> 
+      </div> 
+    </mat-step> 
+
+
+    <mat-step label="LoanDetails"> 
+      <div formGroupName="cLoanDetails"> 
+        <ng-template matStepLabel>Loan Details</ng-template> 
+ 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="loanNo"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="loanAmount"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="rateOfInterest"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="tenure"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="totalAmounttobepaid"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="processingFees"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="totalInterest"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="sanctionaDate"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="remark"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="status"> 
+      </mat-form-field><br> 
+      
+       <div formGroupName="emidetails"> 
+        <h1 style="background-color: rgb(21, 177, 216);">EMI Details</h1>
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="nextEmiDueDate"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="emiAmountMonthly"> 
+      </mat-form-field><br> 
+      <mat-form-field> 
+        <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="previousEmiStatus"> 
+      </mat-form-field><br> 
+    </div>
+        
+
+ 
+    <div> 
+      <button mat-raised-button matStepperPrevious>Back</button> 
+      <button mat-raised-button color="primary" matStepperNext>Next</button> 
+    </div> 
+  </div> 
+</mat-step>
+
+
+
+
+<mat-step label="PreviousLoan"> 
+  <div formGroupName="cPreviousLoan"> 
+    <ng-template matStepLabel>Previous Loan Details</ng-template> 
+
+  <mat-form-field> 
+    <input matInput type="text" class="form-control"  placeholder="Profession Type" formControlName="ploanAmount"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="pTenure"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="paidAmount"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="remainingAmount"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="deafulterCount"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="status"> 
+  </mat-form-field><br>
+  <mat-form-field> 
+    <input matInput type="text"  class="form-control"  placeholder="Income" formControlName="remark"> 
+  </mat-form-field><br>
+
+  <div formGroupName="pbankDetails"> 
+    <h1 style="background-color: rgb(21, 177, 216);">Previous Bank Details</h1>
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="branchName"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="branchCode"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="ifsc"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="micrCode"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="contactNo"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="status"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="email"> 
+  </mat-form-field><br> 
+
+  <div formGroupName="branchAddress"> 
+    <h1 style="background-color: rgb(21, 177, 216);">Previous Bank Address</h1>
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter City Name"formControlName="cityname"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter Area Name"formControlName="areaname"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="district"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="state"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="pincode"> 
+  </mat-form-field><br> 
+  <mat-form-field> 
+    <input matInput type="text" class="form-control" placeholder="Enter District"formControlName="streetname"> 
+  </mat-form-field><br> 
+  </div>
+
+
+
+  </div>
+    
+  <div> 
+    <button mat-raised-button matStepperPrevious>Back</button> 
+    <button mat-raised-button color="primary" matStepperNext>Next</button> 
+  </div> 
+</div> 
+</mat-step>
+
+
+
+
+
+
+    <!-- <mat-step label="Loan Details"> 
       <div formGroupName="sanctionletter"> 
         <ng-template matStepLabel>Loan Details</ng-template> 
  
@@ -129,7 +424,7 @@
           <button mat-raised-button color="primary" matStepperNext>Next</button> 
         </div> 
       </div> 
-    </mat-step>  -->  
+    </mat-step>   -->
  
 <!--  
     <mat-step label="Gurantor Details"> 
