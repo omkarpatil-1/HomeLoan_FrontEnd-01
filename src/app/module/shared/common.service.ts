@@ -2,12 +2,10 @@ import { Customer } from './../../model/Customer';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-<<<<<<< HEAD
-import { Enquiry } from 'app/model/enquiry';
 import { Cibil } from 'app/model/cibil';
-=======
 import { Enquiry_Details } from 'app/model/Enquiry_Details';
->>>>>>> 8ddd0967ad87421d0621f98fb6cf7efecabc1488
+import { send } from 'process';
+
 
 @Injectable({
   providedIn: 'root'
@@ -56,7 +54,7 @@ export class CommonService {
     return this.http.get('http://localhost:8003/Enquiries/getAllEnquiry');
   }
 
-<<<<<<< HEAD
+
   // getCibil():Observable<any> {
   //   return this.http.get(`${this.url12}`);
   // }
@@ -86,13 +84,13 @@ export class CommonService {
       return this.http.get<Cibil[]>(this.url12);
      }
  }
-=======
-  getCibil(id:number):Observable<any> {
-    return this.http.get(`${this.baseUrl}/getCibil/${id}`);
-  }
 
-  send(){
-     this.http.get('http://localhost:8003/customer/checkCibilStauts');
-  }
-}
->>>>>>> 8ddd0967ad87421d0621f98fb6cf7efecabc1488
+  // getCibil(id:number):Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/getCibil/${id}`);
+  // }
+
+  // send() {
+  //    this.http.get('http://localhost:8003/customer/checkCibilStauts');
+  // }
+
+
