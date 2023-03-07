@@ -161,36 +161,36 @@ cPreviousLoan:this.fb.group({
   status:[''],
   remark:['']
 
+}),
+
+ccibil:this.fb.group({
+  cibilId:[0],
+  cibilScore:[0],
+  status:[''],
+  remarks:[''],
+  eid:[0]
+
+}),
+
+cPropertyInfo:this.fb.group({
+  propertyid:[0],
+     propertytype:[''],
+    propertyArea:[''],
+    constructionArea:[''],
+    propertyprice:[0],
+    constructionprice:[0],
+    propertyAddress:this.fb.group({
+      aid:[0],
+      cityname:[''],
+      areaname:[''],
+      district:[''],
+      state:[],
+      pincode:[0], 
+      streetname:['']
+
+    })
+
 })
-
-// ccibil:this.fb.group({
-//   cibilId:[],
-//   cibilScore:[],
-//   status:[],
-//   remarks:[],
-//   eid:[]
-
-// }),
-
-// cPropertyInfo:this.fb.group({
-//   propertyid:[],
-//      propertytype:[],
-//     propertyArea:[],
-//     constructionArea:[],
-//     propertyprice:[],
-//     constructionprice:[],
-//     propertyAddress:this.fb.group({
-//       aid:[],
-//       cityname:[],
-//       areaname:[],
-//       district:[],
-//       state:[],
-//       pincode:[], 
-//       streetname:[]
-
-//     })
-
-// })
 })
 
 
