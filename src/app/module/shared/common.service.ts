@@ -11,6 +11,8 @@ import { send } from 'process';
   providedIn: 'root'
 })
 export class CommonService {
+ 
+  
 
   private baseUrl = 'http://localhost:8081/enquiry';
 
@@ -69,12 +71,14 @@ export class CommonService {
     remarks : '',
 	  eID : 0,
   }
-     
- 
+   //For Save Enuiry  
+  saveEnqury():Observable<any> {
+  return  this.http.get(this.url12)
+  }
 
   saveCibil() :Observable<any>{
+    window.location.reload();
    return this.http.get(this.url11);
-     window.location.reload();
      }
 
 
@@ -83,14 +87,16 @@ export class CommonService {
         
       return this.http.get<Cibil[]>(this.url12);
      }
+
+     send() {
+      this.http.get('http://localhost:8003/customer/checkCibilStauts');
+   }
+ 
  }
 
   // getCibil(id:number):Observable<any> {
   //   return this.http.get(`${this.baseUrl}/getCibil/${id}`);
   // }
 
-  // send() {
-  //    this.http.get('http://localhost:8003/customer/checkCibilStauts');
-  // }
-
+ 
 

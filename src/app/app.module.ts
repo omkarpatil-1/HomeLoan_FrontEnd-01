@@ -30,13 +30,14 @@ import { ApplyprocessComponent } from './home/applyprocess/applyprocess.componen
 import { FaqComponent } from './home/faq/faq.component';
 import { FrontpageComponent } from './home/frontpage/frontpage.component';
 import { SanctionComponent } from './module/creditmanager/sanction/sanction.component';
+import { EnquiryComponent } from './module/operationexecutive/enquiry/enquiry.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,LoginComponent, HomeComponent, EmicalComponent, AboutusComponent, ContactusComponent, ApplyprocessComponent, FaqComponent, FrontpageComponent
+    AdminLayoutComponent,LoginComponent, HomeComponent, EmicalComponent, AboutusComponent, ContactusComponent, ApplyprocessComponent, FaqComponent, FrontpageComponent, EnquiryComponent
   ],
   imports: [
     BrowserModule,
