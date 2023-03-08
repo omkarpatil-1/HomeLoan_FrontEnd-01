@@ -1,4 +1,5 @@
-<!-- <div class="container-fluid g-0">
+<router-outlet></router-outlet>
+<div class="container-fluid g-0">
 
   
   
@@ -11,6 +12,10 @@
           <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal"
             data-bs-target="#exampleModal" #addEmployeeButton>Add Employee</button>
         </div>
+          <br>
+          <!-- <div class="add-employee ">
+            <button type="button" class="btn btn-outline-success btn-lg"  routerLink="/viewemp">Show Employee</button>
+          </div> -->
   
         <div class="search-employees">
           <input type="search" class="form-control" placeholder="Search Employees"
@@ -48,14 +53,14 @@
         </div>
         <div class="modal-body">
   
-          <form [formGroup]="employeeForm">
+          <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
   
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="First Name" formControlName="firstname">
+                <input type="text" class="form-control" placeholder="Name" formControlName="name">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname">
+                <input type="text" class="form-control" placeholder="designation" formControlName="designation">
               </div>
             </div>
   
@@ -65,11 +70,13 @@
                 <h6 class="text-secondary fst-italic">Personal Information</h6>
               </div>
             </div>
+
+
   
             <div class="row">
               <div class="col">
-                <label for="datepicker" class="form-label">Birthdate</label>
-                <input type="date" class="form-control" id="datepicker" formControlName="birthday">
+                <label for="datepicker" class="form-label">Salary</label>
+                <input type="number" class="form-control" id="salary" formControlName="salary">
               </div>
               <div class="col">
                 <div class="row">
@@ -93,7 +100,7 @@
               </div>
             </div>
   
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
               <div class="col">
                 <select class="form-select" formControlName="education">
                   <option value="default" selected>Select Role</option>
@@ -102,43 +109,51 @@
                   </option>
                 </select>
               </div>
-            </div>
+            </div> -->
   
-            <div class="row mt-3">
+            <!-- <div class="row mt-3">
               <div class="col">
                 <label for="profile" class="form-label">Profile Image</label>
                 <input type="file" class="form-control" id="profile" #fileInput>
               </div>
-            </div>
+            </div> -->
   
             <div class="row mt-5">
               <div class="col form-heading">
-                <h6 class="text-secondary fst-italic">Job Information</h6>
+                <h6 class="text-secondary fst-italic">Login Information</h6>
               </div>
             </div>
-  
+            
+            <div class="row">
+              <div class="col mb-3">
+                <input type="text" class="form-control" placeholder="Emial" formControlName="email">
+              </div>
+            </div>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Company Name" formControlName="company">
+                <input type="text" class="form-control" placeholder="User Name" formControlName="username">
               </div>
             </div>
   
             <div class="row mt-3">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Job Experience (yrs)"
-                  formControlName="jobExperience">
+                <input type="text" class="form-control" placeholder="password"
+                  formControlName="password">
               </div>
-              <div class="col">
+              <!-- <div class="col">
                 <input type="number" class="form-control" placeholder="Salary (LPA)" formControlName="salary">
-              </div>
+              </div> -->
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Insert</button>
             </div>
           </form>
   
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addEmployee()">Insert</button>
-        </div>
+        
       </div>
     </div>
   </div>
- -->
+
+  
+

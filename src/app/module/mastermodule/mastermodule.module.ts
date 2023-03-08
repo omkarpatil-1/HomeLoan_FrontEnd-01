@@ -5,14 +5,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeComponent } from './dashboard/employee/employee.component';
+import { EmployeedataComponent } from './dashboard/employeedata/employeedata.component';
 
 const adminrouting: Routes = [
   {path: 'adminbash', component: DashboardComponent},
-  {path: 'city', component: AddStudentComponent}
+  {path: 'city', component: AddStudentComponent},
+  {path: 'viewemp' ,component:EmployeedataComponent}
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, AddStudentComponent, EmployeeComponent],
+  declarations: [DashboardComponent, AddStudentComponent, EmployeeComponent, EmployeedataComponent],
   imports: [
     CommonModule, RouterModule.forChild(adminrouting),FormsModule,ReactiveFormsModule
   ]
