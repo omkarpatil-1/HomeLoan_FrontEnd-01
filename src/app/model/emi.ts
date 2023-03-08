@@ -1,5 +1,5 @@
 import { AccountDetails } from "./account-details";
-import { Address } from "./address";
+import { CustomerAddress } from "./CustomerAddress";
 import { CarInfo } from "./car-info";
 
 import { GuarantorDetails } from "./guarantor-details";

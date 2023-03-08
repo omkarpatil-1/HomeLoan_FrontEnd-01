@@ -1,7 +1,12 @@
 export class GuarantorDetails {
-guarantorId:number;
-guarantorName:String;
-guarantorMobileNumber:number;
-guarantorPermanentAddress:String;
+gid:number;
+gName:String;
+gDateofBirth:string;
+gRelationshipwithCustomer:string;
+gMobNo:number;
+gAdharCardNo:number;
+gMortgageDetails:string;
+gPermanentAddress:string;
+gloaclAddress:string;
 
 }
