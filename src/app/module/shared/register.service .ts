@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { SanctionLetter } from 'app/model/sanction-letter';
+import { Permanent } from 'app/model/permanent';
 
 @Injectable({
   providedIn: 'root'
