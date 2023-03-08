@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { SanctionLetter } from 'app/model/sanction-letter';
+
 import { RegisterService } from 'app/module/shared/register.service ';
 import { ReportService } from 'app/module/shared/report.service';
 
@@ -37,7 +37,7 @@ export class SanctionComponent implements OnInit {
         remarks:[this.ser.sanction.remarks],
         termsandCondition:[this.ser.sanction.termsandCondition],
         status:[this.ser.sanction.status],
-        email:[this.ser.sanction.email]
+  
       }
     )
     

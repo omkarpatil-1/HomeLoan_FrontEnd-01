@@ -109,7 +109,7 @@ sanction:SanctionLetter={
   remarks: '',
   termsandCondition: '',
   status: '',
-  email: ''
+
 }
 
 getSanction(sid: number): Observable<SanctionLetter> {
