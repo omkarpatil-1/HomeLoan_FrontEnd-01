@@ -11,41 +11,47 @@ import { RegisterService } from 'app/module/shared/register.service ';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent  implements OnInit{
 
-  // title = 'EmployeeManagement';
-  // @ViewChild('fileInput') fileInput: any;
-  // @ViewChild('addEmployeeButton') addEmployeeButton: any;
 
-  // employeeForm: FormGroup;
+  title = 'EmployeeManagement';
+  @ViewChild('fileInput') fileInput: any;
+  @ViewChild('addEmployeeButton') addEmployeeButton: any;
 
-  // employees: Employee[];
-  // employeesToDisplay: Employee[];
-  // roleOptions = [
-  //   'Credit-Manager',
-  //   'Relational-Exicutive',
-  //   'Operational-Exicutive',
-  //   'Account-head',
-  //   'Bank-Manager',
-  // ];
+   employeeForm: FormGroup;
 
-  // constructor( private fb: FormBuilder,private employeeService: LoginService)
-  //  {
-  //   this.employeeForm = fb.group({});
-  //   this.employees = [];
-  //   this.employeesToDisplay = this.employees;
-  // }
-   ngOnInit(): void {}
+  employees: Employee[];
+  employeesToDisplay: Employee[];
+  roleOptions = [
+    'Credit-Manager',
+    'Relational-Exicutive',
+    'Operational-Exicutive',
+    'Account-head',
+    'Bank-Manager',
+  ];
+
+  constructor( private fb: FormBuilder,private ls: LoginService)
+   {
+    // this.employeeForm = fb.group({});
+    // this.employees = [];
+    // this.employeesToDisplay = this.employees;
+  }
+   ngOnInit(): void {
     
-  //   this.employeeForm = this.fb.group({
-  //     firstname: this.fb.control(''),
-  //     lastname: this.fb.control(''),
-  //     birthday: this.fb.control(''),
-  //     gender: this.fb.control(''),
-  //     role: this.fb.control('default'),      
-  //     email: this.fb.control(''),
+    this.employeeForm = this.fb.group({
+      id:[this.ls.employee.id],
+      name:[this.ls.employee.name],
+      designation:[this.ls.employee.designation],
+      salary:[this.ls.employee.salary],
+      gender:[this.ls.employee.gender],
+      email:[this.ls.employee.email],
+      username:[this.ls.employee.username],
+      password:[this.ls.employee.password]
+
+
       
-  //   });
+    });
+   }
 
   //   this.employeeService.getEmployees().subscribe((res) => {
   //     for (let emp of res) {
@@ -60,21 +66,11 @@ export class DashboardComponent implements OnInit {
   //   throw new Error('Method not implemented.');
   // }
  
-  // addEmployee() {
-  //   let employee: Employee = {
-  //     firstname: this.FirstName.value,
-  //     lastname: this.LastName.value,
-  //     birthdate: this.BirthDay.value,
-  //     gender: this.Gender.value,
-  //     role: this.roleOptions[parseInt(this.Role.value)],      
-  //     email: this.Email.value,      
-  //     profile: this.fileInput.nativeElement.files[0]?.name,
-  //   };
-  //   this.employeeService.postEmployee(employee).subscribe((res) => {
-  //     this.employees.unshift(res);
-  //     this.clearForm();
-  //   });
-  // }
+  addEmployee() {
+    console.log('inside addEmployee()');
+    console.log(this.employeeForm.value);
+    this.ls.postEmployee(this.employeeForm.value).subscribe();
+  }
 
   // removeEmployee(event: any) {
   //   this.employees.forEach((val, index) => {
@@ -112,36 +108,36 @@ export class DashboardComponent implements OnInit {
   //   this.fileInput.nativeElement.value = '';
   // }
 
-  // searchEmployees(event: any) {
-  //   let filteredEmployees: Employee[] = [];
+  searchEmployees(event: any) {
+    let filteredEmployees: Employee[] = [];
 
-  //   if (event === '') {
-  //     this.employeesToDisplay = this.employees;
-  //   } else {
-  //     filteredEmployees = this.employees.filter((val, index) => {
-  //       let targetKey = val.firstname.toLowerCase() + '' + val.lastname.toLowerCase();
-  //       let searchKey = event.toLowerCase();
-  //       return targetKey.includes(searchKey);
-  //     });
-  //     this.employeesToDisplay = filteredEmployees;
-  //   }
-  // }
+    if (event === '') {
+      this.employeesToDisplay = this.employees;
+    } else {
+      filteredEmployees = this.employees.filter((val, index) => {
+        let targetKey = val.name.toLowerCase() + '' + val.designation.toLowerCase();
+        let searchKey = event.toLowerCase();
+        return targetKey.includes(searchKey);
+      });
+      this.employeesToDisplay = filteredEmployees;
+    }
+  }
 
-  // clearForm() {
-  //   this.FirstName.setValue('');
-  //   this.LastName.setValue('');
-  //   this.BirthDay.setValue('');
-  //   this.Gender.setValue('');
-  //   this.Role.setValue('');
+  clearForm() {
+    // this.name.setValue('');
+    // this.LastName.setValue('');
+    // this.BirthDay.setValue('');
+    // this.Gender.setValue('');
+    // this.Role.setValue('');
     
-  //   this.Email.setValue('');
+    // this.Email.setValue('');
    
-  //   this.fileInput.nativeElement.value = '';
-  // }
+    this.fileInput.nativeElement.value = '';
+  }
 
-  // public get FirstName(): FormControl {
-  //   return this.employeeForm.get('firstname') as FormControl;
-  // }
+  public get Name(): FormControl {
+    return this.employeeForm.get('name') as FormControl;
+  }
   // public get LastName(): FormControl {
   //   return this.employeeForm.get('lastname') as FormControl;
   // }

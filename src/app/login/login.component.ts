@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     if (u.username === 'ad' && u.password === 'ad') {
       console.log('in admin');
       sessionStorage.setItem('role', 'admin');
-      this.router.navigateByUrl("role/admin/adminbash");
+      this.router.navigateByUrl("role/admin");
     }
     if (u.username === 'emp' && u.password === 'emp') {
       console.log('in emp');

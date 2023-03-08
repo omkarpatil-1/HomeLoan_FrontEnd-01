@@ -1,11 +1,14 @@
 export class Employee {
 
-    firstname:string;
-	lastname:string;
-	password:string;
-	role:string;
-	email:string;
+	id:number;
+    name:string;
+	designation:string;
+	salary:number;
 	gender:string;
-	birthday:string;
-	profile:any[];
+	email:string;
+	username:string;
+	password:string;
+	status:string;
+	address:[];
+	bankdetails:[];
 }

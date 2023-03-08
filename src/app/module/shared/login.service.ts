@@ -13,7 +13,7 @@ export class LoginService {
 
 
 
-   constructor(private http: HttpClient) { }
+   constructor(public http: HttpClient) { }
 
   // enqiry:Enquiry={
   //   custId: 0,
@@ -59,12 +59,13 @@ export class LoginService {
     return this.http.get<Employee[]>(this.baseUrl);
   }
 
-  postEmployee(employee: Employee) {
-    return this.http.post<Employee>(this.baseUrl, employee);
+  postEmployee(employee: Employee) :Observable<Employee>{
+    console.log(employee);
+    return this.http.post<Employee>("http://localhost:8002/admin-api/addEmployee", employee);
   }
 
-  deleteEmployee(id: string) {
-    return this.http.delete(this.baseUrl + '/' + id);
+  deleteEmployee(id: any) {
+    return this.http.delete("http://localhost:8002/admin-api/deleteEmployeeByID" + '/' + id);
   }
 
 
@@ -74,17 +75,19 @@ export class LoginService {
     ApiUrlP="http://localhost:9898/login/register";
     url="http://localhost:9898/login/";
     
-    list:Employee={
-    
-      firstname: '',
-      lastname: '',
-      password: '',
-      role: '',
-      email: '',
+    employee:Employee={
+      id: 0,
+      name: '',
+      designation: '',
+      salary: 0,
       gender: '',
-      birthday: '',
-      profile:[]
-      
+      email: '',
+      username: '',
+      password: '',
+      status: '',
+      address: [],
+      bankdetails: [],
+    
     }
       employeeList: any;
     
