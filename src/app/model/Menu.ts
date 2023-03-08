@@ -4,7 +4,7 @@ export class Menu {
     public static menu: Array<any> = [
       {
         admin: [
-          {path: "employeeForm", title: "update Employee", icon: "pe-7s-graph", class: "" }
+          {path: "adminbash", title: "Add Employee", icon: "pe-7s-graph", class: "" }
           ,
           {path:"viewemp" , title:"show employee" ,icon:"pe-7s-graph", class:""}
          
