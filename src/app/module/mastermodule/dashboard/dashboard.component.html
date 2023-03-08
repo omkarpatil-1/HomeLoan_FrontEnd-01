@@ -13,9 +13,9 @@
             data-bs-target="#exampleModal" #addEmployeeButton>Add Employee</button>
         </div>
           <br>
-          <div class="add-employee ">
-            <button type="button" class="btn btn-outline-success btn-lg"  routerLink="/showemp">Show Employee</button>
-          </div>
+          <!-- <div class="add-employee ">
+            <button type="button" class="btn btn-outline-success btn-lg"  routerLink="/viewemp">Show Employee</button>
+          </div> -->
   
         <div class="search-employees">
           <input type="search" class="form-control" placeholder="Search Employees"
@@ -27,11 +27,11 @@
      
       <div class="employees">
   
-        <!-- <div class="row mt-5" *ngIf="employees.length == 0">
+        <div class="row mt-5" *ngIf="employees.length == 0">
           <div class="col text-center">
             <span class="text-secondary fs-2 fw-bold fst-italic">There are No Employees Added!</span>
           </div>
-        </div> -->
+        </div>
   
         <div class="row mt-4" *ngFor="let employee of employeesToDisplay; let ei = index;">
           <div class="col">

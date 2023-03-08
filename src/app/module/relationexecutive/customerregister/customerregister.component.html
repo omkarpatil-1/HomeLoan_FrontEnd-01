@@ -1,6 +1,67 @@
 <h1 style="text-align: center;">Registration Form</h1> 
-  <mat-card> 
-    <mat-card-content fxLayout="column" fxLayoutAlign="center center"> 
+  
+<div style="text-align: center;">
+  <form [formGroup]="CregForm" (ngSubmit)="saveInfo()">
+
+    <label class="mr-4">
+      <input  matInput type="text" class="form-control" placeholder="Applicant Name" formControlName="name"> 
+    </label>
+    
+    <label>
+      <input matInput type="text"  class="form-control"placeholder="Applicant DOB" formControlName="dob"> 
+    </label>
+    <br>
+    <label  class="mr-4">
+      <input matInput type="text"  class="form-control"placeholder="Applicant age" formControlName="age"> 
+    </label>
+
+    <label >
+      <input matInput type="text" class="form-control" placeholder="Applicant email"formControlName="email"> 
+
+    </label>
+    
+  
+  
+  
+      <div formGroupName="cAddress" >
+          <h2>Customer: Address</h2>
+  
+      
+            <label >
+              <input matInput type="number" class="form-control"  placeholder="addressid" formControlName="addressid"> 
+            </label><br>
+         
+  
+            <div formGroupName="permanant">
+              <h2>Permanant :Address</h2>
+            
+                <label>
+                  <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
+                </label>
+                <br>
+                <label>
+                  <input matInput type="text" class="form-control"  placeholder="Areaname" formControlName="areaname"> 
+                </label>
+                <br>
+            </div>
+  
+            <div formGroupName="local">
+              <h2>Local :Address</h2>
+                <label>
+                  <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
+                </label>
+                <br>
+                <label>
+                  <input matInput type="text" class="form-control"  placeholder="Areaname" formControlName="areaname"> 
+                </label>
+                <br>
+            </div>
+      </div>
+  </form>
+</div>
+
+<!-- <mat-card>  -->
+    <!-- <mat-card-content fxLayout="column" fxLayoutAlign="center center"> 
   <mat-vertical-stepper [linear]="false" #stepper animationDuration="2000"> 
     <form [formGroup]="CregForm" (ngSubmit)="saveInfo()"> 
     <mat-step label="Applicant Info"> 
@@ -41,17 +102,22 @@
           <button  mat-raised-button color="primary" matStepperNext>Next</button> 
         </div> 
        
-    </mat-step> 
+    </mat-step>  -->
  
-     
-    <mat-step label="Customer Address" > 
-      <div formGroupName="CregForm"> 
-        <ng-template matStepLabel>Customer Address</ng-template> 
-      
-        <mat-step [stepControl]="CregForm.cAddress.controls.permanant">
-          <form [formGroup]="CregForm">
-        <div> 
-          <ng-template matStepLabel>Customer Address</ng-template> 
+   
+
+  
+    <!-- <mat-step label="Customer Address" > 
+      <div formGroupName="cAddress"> 
+        <ng-template matStepLabel>Customer Address</ng-template>
+
+        <mat-step label="permanant address">
+          <div formGroupName="permanant">
+        <div>  -->
+          <!-- <ng-template matStepLabel>Customer Address</ng-template>  -->
+          <!-- <mat-form-field> 
+            <input matInput type="number" class="form-control"  placeholder="aid" formControlName="aid"> 
+          </mat-form-field><br> 
         <mat-form-field> 
           <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
         </mat-form-field><br> 
@@ -74,19 +140,53 @@
           <input matInput type="text" class="form-control"  placeholder="Street Name" formControlName="streetname"> 
         </mat-form-field><br>
         </div>
-        </form>
-          
+          </div>
+          </mat-step>
+          <!-- Local Address -->
+          <!-- <mat-step label="local address">
+          <div formGroupName="local">
+            <div>  --> -->
+              <!-- <ng-template matStepLabel>Customer Address</ng-template>  -->
+              <!-- <mat-form-field> 
+                <input matInput type="number" class="form-control"  placeholder="aid" formControlName="aid"> 
+              </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="Cityname" formControlName="cityname"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="Areaname" formControlName="areaname"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="District" formControlName="district"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="State" formControlName="state"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="Pincode" formControlName="pincode"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="Housen Number" formControlName="housenno"> 
+            </mat-form-field><br> 
+            <mat-form-field> 
+              <input matInput type="text" class="form-control"  placeholder="Street Name" formControlName="streetname"> 
+            </mat-form-field><br>
+            </div>
+              </div>
         </mat-step>
-        
+         -->
 
  
-        <div> 
+        <!-- <div> 
           <button mat-raised-button matStepperPrevious>Back</button> 
           <button mat-raised-button color="primary" matStepperNext>Next</button> 
         </div> 
-      </div> 
-    </mat-step> 
+      </div>  -->
+    <!-- </mat-step>  -->
  
+
+
+
         <!-- <mat-step label="Profession"> 
       <div formGroupName="profession"> 
         <ng-template matStepLabel>Profession</ng-template> 
@@ -215,7 +315,7 @@
       </div> 
  
     </mat-step>  -->
-  </form> 
+  <!-- </form> 
   </mat-vertical-stepper> 
 </mat-card-content> 
-</mat-card>
+</mat-card> -->

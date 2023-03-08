@@ -20,11 +20,11 @@ import { FaqComponent } from './home/faq/faq.component';
 import { BankmanagerModule } from './module/bankmanager/bankmanager.module';
 import { TeleheadModule } from './module/telehead/telehead.module';
 import { FrontpageComponent } from './home/frontpage/frontpage.component';
-<<<<<<< HEAD
+
 import { EmployeedataComponent } from './module/mastermodule/dashboard/employeedata/employeedata.component';
-=======
 import { EnquiryComponent } from './module/relationexecutive/enquiry/enquiry.component';
->>>>>>> 7b6ebfe66c53fa596f7bc5e6ee1024a6a409f72a
+
+
 
 
 
@@ -64,7 +64,7 @@ export const AppRoutes: Routes = [
   {
     path:"log",component:LoginComponent
   },
-  {path:"showemp" ,component:EmployeedataComponent},
+ // {path:"showemp" ,component:EmployeedataComponent},
 
   {
     path: 'role',

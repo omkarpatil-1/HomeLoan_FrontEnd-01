@@ -9,7 +9,8 @@ import { EmployeedataComponent } from './dashboard/employeedata/employeedata.com
 
 const adminrouting: Routes = [
   {path: 'adminbash', component: DashboardComponent},
-  {path: 'city', component: AddStudentComponent}
+  {path: 'city', component: AddStudentComponent},
+  {path: 'viewemp' ,component:EmployeedataComponent}
 ];
 
 @NgModule({

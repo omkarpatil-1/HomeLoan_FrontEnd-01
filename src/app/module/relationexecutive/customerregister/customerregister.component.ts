@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonService } from 'app/module/shared/common.service';
 import { RegisterService } from 'app/module/shared/register.service ';
@@ -10,7 +10,7 @@ import { RegisterService } from 'app/module/shared/register.service ';
   templateUrl: './customerregister.component.html',
   styleUrls: ['./customerregister.component.css']
 })
-export class CustomerregisterComponent implements OnInit {
+export class CustomerregisterComponent  {
   steps:any=1;
   addressproof:any;
   identityproof:any;
@@ -18,38 +18,89 @@ export class CustomerregisterComponent implements OnInit {
   incomeproof2:any;
   incomeproof3:any;
 
-CregForm:FormGroup;
-doc:FormGroup;
-  constructor(private fb:FormBuilder, private rs:RegisterService,public router:Router) { }
+//CregForm:FormGroup;
 
-  ngOnInit(): void {
+  doc:FormGroup;
+
+  constructor(public fb:FormBuilder, public rs:RegisterService,public router:Router) { }
+
+//krishna wadle coding start
+
+  CregForm=new FormGroup({
+
+    eid: new FormControl('2'), 
+    name:new FormControl('krish'),
+    dob:new FormControl(''),
+    age:new FormControl(''),
+    gender:new FormControl(''),
+    email:new FormControl(''),
+    mobileNo:new FormControl(''),
+    cAdditionalMobileNo:new FormControl(''),
+    cAmountPaidforHome:new FormControl(''),
+    cTotalLoanRequired:new FormControl(''),
+
+    cAddress:new FormGroup({
+      addressid:new FormControl(123),
+
+          permanant:new FormGroup({
+
+            aid:new FormControl(''),
+            cityname:new FormControl('Udgir'),
+            areaname:new FormControl(''),
+            district:new FormControl(''),
+            state:new FormControl(''),
+            pincode:new FormControl(''),
+            houseno:new FormControl(''),
+            streetname:new FormControl('')
+            }),
+
+          local:new FormGroup({
+                aid:new FormControl(''),
+                cityname:new FormControl(['Pune']),
+                areaname:new FormControl(''),
+                district:new FormControl(''),
+                state:new FormControl(''),
+                pincode:new FormControl(''),
+                houseno:new FormControl(''),
+                streetname:new FormControl('')
+          })
+    })
+  })
+// coding stop
 
 
-    this.CregForm=this.fb.group({
-      eid:[0],
-name:[''],
-dob:[''],
-age:[0],
-gender:[''],
-email:[''],
-mobileNo:[0],
-cAdditionalMobileNo:[0],
-cAmountPaidforHome:[0],
-cTotalLoanRequired:[0],
 
 
-cAddress:this.fb.group({
-  addressid:[0],
-  permanant:this.fb.group({
-    aid:[0],
-    cityname:[''],
-    areaname:[''],
-    district:[''],
-    state:[''],
-    pincode:[0],
-    houseno:[0],
-    streetname:['']
-      })
+
+
+//   ngOnInit(): void {
+
+
+//     this.CregForm=this.fb.group({
+//       eid:[0],
+// name:[''],
+// dob:[''],
+// age:[0],
+// gender:[''],
+// email:[''],
+// mobileNo:[0],
+// cAdditionalMobileNo:[0],
+// cAmountPaidforHome:[0],
+// cTotalLoanRequired:[0],
+
+
+// cAddress:this.fb.group({
+//   addressid:[0],
+  // permanant:this.fb.group({
+  //   aid:[0],
+  //   cityname:[''],
+  //   areaname:[''],
+  //   district:[''],
+  //   state:[''],
+  //   pincode:[0],
+  //   houseno:[0],
+  //   streetname:['']
+  //     })
 //   local:this.fb.group({
 //     aid:[],
 //     cityname:[],
@@ -61,7 +112,7 @@ cAddress:this.fb.group({
 //     streetname:[]
 // })
   
-})
+//})
 
 // cProfession:this.fb.group({
 //   pid:[],
@@ -181,11 +232,7 @@ cAddress:this.fb.group({
 //     })
 
 // })
-})
-
-
-    
-  }
+//}) }
     
 
 

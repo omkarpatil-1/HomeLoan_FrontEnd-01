@@ -23,7 +23,7 @@ export class EmployeedataComponent implements OnInit {
   editEmployee(emp:Employee){
 
     this.ls.employee=Object.assign({},emp);
-    this.route.navigateByUrl("adminbash");
+    this.route.navigateByUrl("employeeForm");
   }
   deleteEmployee(eid:any){
 
