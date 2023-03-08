@@ -1,0 +1,69 @@
+
+
+
+<h1 style="text-align: center;">Ledger Data</h1>
+<mat-card>
+  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+ 
+    <form [formGroup]="saveledger" (ngSubmit)="saveLedger()">
+      
+      <ng-template matStepLabel>Ledger Data</ng-template>
+
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="dd-mm--yy" formControlName="ledgerCreatedDate">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="total loan" formControlName="totalLoanAmount">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="payableAmountwithInterest" formControlName="payableAmountwithInterest">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="Tenure" formControlName="tenure">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="emi" formControlName="monthlyEmi">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="amount paid till date" formControlName="amountPaidtillDate">
+    </mat-form-field><br>     
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="Remaining amount" formControlName="remainingAmount">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="next emi start date " formControlName="nextEmiDatestart">
+    </mat-form-field><br>
+   
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder=" next emi end date" formControlName="nextEmiEndDate">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="Defaulter count" formControlName="defaulterCount">
+    </mat-form-field><br>
+  
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="previous Emi Status" formControlName="previous">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="current Month Emi Status" formControlName="currentMonthEmiStatus">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="loan End Date" formControlName="loanEnDate">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="loanStatus" formControlName="loanStatus">
+    </mat-form-field><br>
+   
+    
+      <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    
+</form>
+
+</mat-card-content>
+</mat-card> 
+
+
+
+

@@ -15,7 +15,7 @@ product:String;
  remarks:String;
  termsandCondition:String;
  status:String;
- email:String;
+ 
 
 
 

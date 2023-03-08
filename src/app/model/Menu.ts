@@ -24,8 +24,10 @@ export class Menu {
 
       ],
       account:[
-        {path: "viewapp", title: "VIEW APPLICATION", icon: "pe-7s-graph", class: "" },
-        {path: "sanction", title: "SANCTION", icon: "pe-7s-graph", class: "" },
+        //{path: "viewapp", title: "VIEW APPLICATION", icon: "pe-7s-graph", class: "" },
+        {path: "ledger", title: "LEDGER APPLICATION", icon: "pe-7s-graph", class: "" },
+        {path: "loan", title: "LOAN APPLICATION", icon: "pe-7s-graph", class: "" },
+        {path: "sanction", title: "View APPLICATION", icon: "pe-7s-graph", class: "" }
        
 
       ],
