@@ -18,103 +18,14 @@ export class CustomerregisterComponent  {
   incomeproof2:any;
   incomeproof3:any;
 
-//CregForm:FormGroup;
+  CregForm:FormGroup;
 
   doc:FormGroup;
 
   constructor(public fb:FormBuilder, public rs:RegisterService,public router:Router) { }
+  ngOnInit(): void {
+   
 
-//krishna wadle coding start
-
-  CregForm=new FormGroup({
-
-    eid: new FormControl('2'), 
-    name:new FormControl('krish'),
-    dob:new FormControl(''),
-    age:new FormControl(''),
-    gender:new FormControl(''),
-    email:new FormControl(''),
-    mobileNo:new FormControl(''),
-    cAdditionalMobileNo:new FormControl(''),
-    cAmountPaidforHome:new FormControl(''),
-    cTotalLoanRequired:new FormControl(''),
-
-    cAddress:new FormGroup({
-      addressid:new FormControl(123),
-
-          permanant:new FormGroup({
-
-            aid:new FormControl(''),
-            cityname:new FormControl('Udgir'),
-            areaname:new FormControl(''),
-            district:new FormControl(''),
-            state:new FormControl(''),
-            pincode:new FormControl(''),
-            houseno:new FormControl(''),
-            streetname:new FormControl('')
-            }),
-
-          local:new FormGroup({
-                aid:new FormControl(''),
-                cityname:new FormControl(['Pune']),
-                areaname:new FormControl(''),
-                district:new FormControl(''),
-                state:new FormControl(''),
-                pincode:new FormControl(''),
-                houseno:new FormControl(''),
-                streetname:new FormControl('')
-          })
-    })
-  })
-// coding stop
-
-
-<<<<<<< HEAD
-
-
-
-
-//   ngOnInit(): void {
-
-
-//     this.CregForm=this.fb.group({
-//       eid:[0],
-// name:[''],
-// dob:[''],
-// age:[0],
-// gender:[''],
-// email:[''],
-// mobileNo:[0],
-// cAdditionalMobileNo:[0],
-// cAmountPaidforHome:[0],
-// cTotalLoanRequired:[0],
-
-
-// cAddress:this.fb.group({
-//   addressid:[0],
-  // permanant:this.fb.group({
-  //   aid:[0],
-  //   cityname:[''],
-  //   areaname:[''],
-  //   district:[''],
-  //   state:[''],
-  //   pincode:[0],
-  //   houseno:[0],
-  //   streetname:['']
-  //     })
-//   local:this.fb.group({
-//     aid:[],
-//     cityname:[],
-//     areaname:[],
-//     district:[],
-//     state:[],
-//     pincode:[],
-//     houseno:[],
-//     streetname:[]
-// })
-  
-//})
-=======
     this.CregForm=this.fb.group({
 eid:[0],
 name:[''],
@@ -152,7 +63,7 @@ cAddress:this.fb.group({
 })
   
 }),
->>>>>>> d8fb3a6403a1a5db29a3bc7a35b74fcfee788047
+
 
 cProfession:this.fb.group({
   pid:[0],
@@ -277,27 +188,14 @@ cPropertyInfo:this.fb.group({
       district:[''],
       state:[],
       pincode:[0], 
-      streetname:['']
-
-<<<<<<< HEAD
-// })
-//}) }
-=======
-    })
-
-})
+      streetname:[''] })
+      })
 })
 
 
-    
-  }
->>>>>>> d8fb3a6403a1a5db29a3bc7a35b74fcfee788047
-    
+}
 
-
-  saveCustomerData()
-    
-    {
+  saveCustomerData() {
   this.steps=this.steps +1;
     }
 
