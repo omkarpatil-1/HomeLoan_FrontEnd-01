@@ -17,8 +17,9 @@ export class Menu {
   
     operation:[
   
-      {path: "oeenq", title: "VIEW ENQUIERY", icon: "pe-7s-graph", class: "" },
-    
+      {path: "oeenq", title: "VIEW Cibil", icon: "pe-7s-graph", class: "" },
+      {path: "cibil", title: "Create Cibil", icon: "pe-7s-graph", class: "" },
+      //{path: "saveenquiry", title: "SaveEnquiry", icon: "pe-7s-graph", class: "" },
     ],
     relation:[
         {path: "reenquiry", title: "ENQUIRY", icon: "pe-7s-graph", class: "" },

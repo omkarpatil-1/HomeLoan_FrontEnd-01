@@ -3,7 +3,7 @@
       <div class="mask d-flex align-items-center h-100">
         <div class="container">
           <div class="text-center pt-5">      
-            <h2 style="margin-bottom:20px;">Enquiry List</h2>          
+            <h2 style="margin-bottom:20px;">Cibil List</h2>          
           </div>
           <div class="row justify-content-center">
             <div class="col-12">
@@ -13,31 +13,25 @@
                     <table class="table table-striped mb-0">
                       <thead style="background-color: #3081d7;">
                         <tr>
-                          <th scope="col">ID</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Age</th>
-                          <th scope="col">Email Id</th>                          
-                          <th scope="col">Status</th>
-                          <th scope="col">Cibil</th>
+                          <th scope="col">cibilId</th>
+                          <th scope="col">cibilScore</th>
+                          <th scope="col">status</th>
+                          <th scope="col">remarks</th>                          
+                          <th scope="col">eID</th>
                           
+
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let e of ellist"> 
+                        <tr  *ngFor="let e of cibilList"> 
                
-                          <td>{{e.custId}}</td>  
-                          <td>{{e.firstName}}</td> 
-                          <td>{{e.age}}</td> 
-                          <td>{{e.emailId}}</td> 
+                          <td>{{e.cibilId}}</td>  
+                          <td>{{e.cibilScore}}</td> 
                           <td>{{e.status}}</td> 
+                          <td>{{e.remarks}}</td> 
+                          <td>{{e.eid}}</td> 
                                            
-                   
-                          <td *ngIf="e.cibil==0">
-                           <input type="button" (click)="getCibil(e.custId)" class="btn btn-success" value="Get cibil"> 
-                          </td>
-                          <td *ngIf="e.cibil!==0">
-                            {{e.cibil}}
-                           </td>
+  
             
                       </tr>
                       </tbody>

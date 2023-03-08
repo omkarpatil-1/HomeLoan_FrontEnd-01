@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cibil } from 'app/model/cibil';
 import { Enquiry_Details } from 'app/model/Enquiry_Details';
 import { CommonService } from 'app/module/shared/common.service';
 
@@ -12,17 +13,25 @@ export class ViewequiryComponent implements OnInit {
 
   constructor(public cs:CommonService, public r:Router,public route:ActivatedRoute) { }
 
-  ellist:Enquiry_Details[]
+
+
+  cibilList:Cibil[]
 
   ngOnInit(): void {
-    this.cs.getEnquiryList().subscribe((data:Enquiry_Details[])=>
-    this.ellist=data        
-    )}
+    
+    this.cs.getAllCibil().subscribe((data:Cibil[])=>
+    this.cibilList=data        
+    )
+    console.log("cibil on Component"+this.cibilList) 
+  }
+  //ellist:Enquiry_Details[]
 
-    getCibil(id:number){
-      this.cs.getCibil(id).subscribe();
-      window.location.reload();
-    }
+  // ngOnInit(): void {
+  //   this.cs.getEnquiryList().subscribe((data:Enquiry_Details[])=>
+  //   this.ellist=data        
+  //   )}
+
+
   
 
 }
