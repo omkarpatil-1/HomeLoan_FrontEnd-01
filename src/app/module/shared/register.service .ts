@@ -74,10 +74,11 @@ cAllPersonalDocs:[]
 
   saveInfo(c: Customer): any {
    
-    return this.httpclient.post(this.url+"/saveData", c,{responseType: 'text'});
+    return this.httpclient.post("localhost:8005/customer/saveCustomerwithoutdacument", c,{responseType: 'text'});
   }
   upload(em:FormData){
-    return this.httpclient.post(this.url+"/saveDoc", em);
+    console.log('inside upload')
+    return this.httpclient.post("localhost:8005/customer/setDocument/"+this.c.eid, em);
   }
 
   getDoc(id:number):Observable<any>{

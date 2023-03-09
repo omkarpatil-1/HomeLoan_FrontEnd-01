@@ -8,34 +8,52 @@
         <form novalidate [formGroup]="doc">
             <div>
             
-                Application Id
-            <input type="text" class="form-control" formControlName="customerId" disabled >
+                Applicant Id
+            <input type="text" class="form-control" formControlName="eid" disabled >
             </div><pre></pre>
             
-                <div *ngIf="this.rs.c.customerId!=0">
+                <div *ngIf="this.rs.c.eid!=0">
           
                 <div class="custom-file">
-                    Identity Proof <input type="file" class="form-control" id="importFile1" (change)="onselectFile1($event)">
+                     AddressProof <input type="file" class="form-control" id="importFile1" (change)="onselectFile1($event)">
                    
                 </div><pre></pre>
 
             <div class="custom-file">
-                Address Proof <input type="file" class="form-control" id="importFile2" (change)="onselectFile5($event)">
+                PanCard <input type="file" class="form-control" id="importFile2" (change)="onselectFile2($event)">
        
             </div><br><pre></pre>
 
             <div class="custom-file">
-                Income Proof1 <input type="file" class="form-control" id="importFile3"
-                    (change)="onselectFile2($event)">
+                ITR <input type="file" class="form-control" id="importFile3"
+                    (change)="onselectFile3($event)">
                
             </div><br><pre></pre>
             <div class="custom-file">
-                Income Proof2 <input type="file" class="form-control" id="importFile4"
-                    (change)="onselectFile3($event)">
+                Adharcard <input type="file" class="form-control" id="importFile4"
+                    (change)="onselectFile4($event)">
             
             </div><br><pre></pre>
             <div class="custom-file">
-                Income Proof3 <input type="file" class="form-control" id="importFile5" (change)="onselectFile4($event)">
+                Photo <input type="file" class="form-control" id="importFile5" (change)="onselectFile5($event)">
+       
+            </div>
+
+            <br><pre></pre>
+            <div class="custom-file">
+                Signature <input type="file" class="form-control" id="importFile6" (change)="onselectFile6($event)">
+       
+            </div>
+
+            <br><pre></pre>
+            <div class="custom-file">
+                BankCheque <input type="file" class="form-control" id="importFile7" (change)="onselectFile7($event)">
+       
+            </div>
+
+            <br><pre></pre>
+            <div class="custom-file">
+                SalarySlip <input type="file" class="form-control" id="importFile8" (change)="onselectFile8($event)">
        
             </div>
 
