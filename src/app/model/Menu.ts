@@ -22,7 +22,7 @@ export class Menu {
       //{path: "saveenquiry", title: "SaveEnquiry", icon: "pe-7s-graph", class: "" },
     ],
     relation:[
-        {path: "reenquiry", title: "ENQUIRY", icon: "pe-7s-graph", class: "" },
+       
         {path: "review", title: "VIEW ENQUIRY", icon: "pe-7s-graph", class: "" },
         {path:"sendmail", title:"Send MAIL", icon:"pe-7s-graph",class:""},
         {path: "recustomer", title: "REGISTER CUSTOMER", icon: "pe-7s-graph", class: "" },

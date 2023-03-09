@@ -69,7 +69,7 @@ export class CommonService {
 	  cibilScore : 0,
 	  status : '',
     remarks : '',
-	  eID : 0,
+	  eid : 0,
   }
    //For Save Enuiry  
   saveEnqury():Observable<any> {
@@ -88,8 +88,8 @@ export class CommonService {
       return this.http.get<Cibil[]>(this.url12);
      }
 
-     send() {
-      this.http.get('http://localhost:8003/customer/checkCibilStauts');
+     send():Observable<any> {
+     return this.http.get('http://localhost:8003/customer/checkCibilStauts');
    }
  
  }

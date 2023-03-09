@@ -1,14 +1,10 @@
 <h1 style="text-align: center;">Cibil remark</h1>
-<mat-card>
-  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+
  
-    <form [formGroup]="mail" (ngSubmit)="sendmail()">
+  
       
       <div>
-        <button type="submit" class="btn btn-success">Send Mail</button>
+        <button type="submit"  (click)="send()">Send Mail</button>
       </div>
     
-</form>
 
-</mat-card-content>
-</mat-card> 

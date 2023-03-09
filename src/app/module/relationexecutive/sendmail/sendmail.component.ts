@@ -16,7 +16,7 @@ export class SendmailComponent implements OnInit {
   }
 
 
-  sendmail(){
-    this.cs.send();
+  send(){
+    this.cs.send().subscribe();
    }
 }
