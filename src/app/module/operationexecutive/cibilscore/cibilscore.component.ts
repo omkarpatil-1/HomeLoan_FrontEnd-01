@@ -16,6 +16,7 @@ export class CibilscoreComponent implements OnInit {
   }
 
   saveCibil(){
+    console.log("inside component ts")
      this.cs.saveCibil().subscribe();
   }
 

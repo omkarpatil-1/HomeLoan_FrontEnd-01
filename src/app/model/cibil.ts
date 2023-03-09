@@ -4,5 +4,5 @@ export class Cibil {
 	cibilScore :number;
 	status :String;
     remarks :String;
-	eID :number;
+	eid :number;
 }
